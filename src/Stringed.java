@@ -1,6 +1,7 @@
-
+package fnms;
 public class Stringed extends Item {
-	public double electric;
+	public boolean electric;
+        public boolean tuned;
 	public Stringed() {
 		super.name = "Stringed";
 	}

@@ -1,5 +1,5 @@
 package fnms;
-public class Strings extends Accessories {
+public class Saxophone extends Wind {
 	private String type;
 
 	public String getType() {
@@ -9,7 +9,7 @@ public class Strings extends Accessories {
 	public void setType(String type) {
 		this.type = type;
 	}
-	public Strings() {
-		super.name = "Strings";
+	public Saxophone() {
+		super.name = "Cassette";
 	}
 }

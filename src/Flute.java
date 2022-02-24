@@ -1,4 +1,4 @@
-
+package fnms;
 public class Flute extends Wind {
 	private String type;
 

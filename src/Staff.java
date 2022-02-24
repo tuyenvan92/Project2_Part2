@@ -1,4 +1,4 @@
-
+package fnms;
 public class Staff {
 	public String name;
 	public void report() {

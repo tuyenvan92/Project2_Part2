@@ -1,4 +1,4 @@
-
+package fnms;
 public class Shirts extends Clothing {
 	private int shirtSize;
 

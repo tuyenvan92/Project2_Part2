@@ -1,4 +1,4 @@
-
+package fnms;
 public class Hats extends Clothing {
 	private int hatSize;
 

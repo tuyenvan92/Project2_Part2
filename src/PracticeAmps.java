@@ -1,4 +1,4 @@
-
+package fnms;
 public class PracticeAmps extends Accessories {
 	private double wattage;
 

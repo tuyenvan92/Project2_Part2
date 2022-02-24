@@ -1,4 +1,4 @@
-
+package fnms;
 public abstract class Music extends Item {
 	public String Brand;
 	public String Album;

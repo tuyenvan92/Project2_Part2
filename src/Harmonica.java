@@ -1,4 +1,4 @@
-
+package fnms;
 public class Harmonica extends Wind {
 	private String key;
 
