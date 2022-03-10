@@ -1,0 +1,78 @@
+Shaggy at the store today
+Shaggy inform that the insufficient money in the register is 1000.0
+--------------------------------
+Shaggy inform that value of all the items in the store is 160.0
+Shaggy dammaged a Shirts so now listPrice is: 64.0 and condition: very good
+Total purchase price: 160.0
+Total dammage item: 1
+--------------------------------
+Shaggy inform that purchase mp3 with value 45.0
+CashRegister now: 955.0
+--------------------------------
+Shaggy inform that purchase mp3 with value 45.0
+CashRegister now: 910.0
+--------------------------------
+Shaggy inform that purchase mp3 with value 45.0
+CashRegister now: 865.0
+--------------------------------
+Shaggy inform that purchase hat with value 10.0
+CashRegister now: 855.0
+--------------------------------
+Shaggy inform that purchase hat with value 10.0
+CashRegister now: 845.0
+--------------------------------
+Shaggy inform that purchase hat with value 10.0
+CashRegister now: 835.0
+--------------------------------
+Shaggy inform that purchase bandanas with value 30.0
+CashRegister now: 805.0
+--------------------------------
+Shaggy inform that purchase bandanas with value 30.0
+CashRegister now: 775.0
+--------------------------------
+Shaggy inform that purchase bandanas with value 30.0
+CashRegister now: 745.0
+--------------------------------
+Shaggy find mp3 in wait list
+Shaggy find mp3 in wait list
+Shaggy find mp3 in wait list
+Shaggy find hat in wait list
+Shaggy find hat in wait list
+Shaggy find hat in wait list
+Shaggy find bandanas in wait list
+Shaggy find bandanas in wait list
+Shaggy find bandanas in wait list
+--------------------------------
+Shaggy add mp3 to the store
+--------------------------------
+Shaggy add mp3 to the store
+--------------------------------
+Shaggy add mp3 to the store
+--------------------------------
+Shaggy add hat to the store
+--------------------------------
+Shaggy add hat to the store
+--------------------------------
+Shaggy add hat to the store
+--------------------------------
+Shaggy add bandanas to the store
+--------------------------------
+Shaggy add bandanas to the store
+--------------------------------
+Shaggy add bandanas to the store
+--------------------------------
+number of items added to inventory: 9
+--------------------------------
+Total number of items sold: 0
+--------------------------------
+Total number of items purcharse: 0
+--------------------------------
+Shaggy bought a good condition new Mp3 from a for $35.2
+CashRegister now: 709.8
+--------------------------------
+acb wanted to buy a MP3 but none were in inventory, so they left
+Total number of damage Item: 1
+--------------------------------
+Shaggy lock up and leave the store
+--------------------------------
+Successfully Log to the fileLogger-1
