@@ -1,0 +1,75 @@
+<!-- BEGIN: CONTACTUS -->
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+<style>
+  #map {
+    height: 400px;
+    width: 85%;
+    margin: auto;
+  }
+</style>
+
+<h3></h3>
+<div>
+  <div id="map"></div>
+  <script>
+    function initMap() {
+      var uluru = {
+        lat: 20.6523683,
+        lng: 106.05226160000001
+      };
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 7,
+        center: uluru
+      });
+      var marker = new google.maps.Marker({
+        position: uluru,
+        map: map
+      });
+    }
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOunf5Mwog0a2rZ9Ffa5HtqgKtiYRNP8g&callback=initMap">
+  </script>
+  <div style="margin: auto;width: 85%;margin-top:50px;padding-bottom: 100px;font-family: arial;color: #333">
+    <div style='text-align:left;width: 45%;float: left;'>
+      <h2 style="font-weight: bold;">Contact Us</h2>
+      <p>
+        <b>Customer satisfaction is our top priority</b>. As the leading Eyewear online retailer, we want to make sure that
+        every transaction results in a pleasant, convenient and successful shopping experience. We guarantee 100% accuracy
+        on all prescriptions or we will remake them at no charge. If you have any questions regarding exchanges, returns
+        or our 12 month warranty, please click on the links below.</p>
+      <p>
+        <b>Our Certified Opticians are available</b> to help you find the perfect eyewear, confirm your prescription, and answer
+        any other questions you may have.</p>
+
+
+    </div>
+    <div style='text-align:left;width: 50%;float: left;margin-left:5%;padding: 0 0 100px 50px'>
+      <h2>Send Us an Email</h2>
+      <p>Send us an Email to
+        <a target="_blank" href='https://mail.google.com/mail/u/0/#inbox?compose=new' style="color: #222">{mail}</a>
+        <h2>Call Us</h2>
+        <b>
+          <i class='fas fa-phone'> </i> +84-{phone}</b>
+        <br/>
+        <i>International Customers Call +{phone_international}</i>
+        <br/>
+        <br/>
+        <b>Monday
+          <i>to</i> Thursday: 8:00 am
+          <i>to</i> 7:00 pm
+          <br/> Friday: 8:00 am
+          <i>to</i> 6:00 pm
+          <br/> Saturday: 8:00 am
+          <i>to</i> 5:00 pm
+          <br/>
+        </b>
+        <br/>
+        <i>Times displayed in Central Time (UTC-6)</i>
+    </div>
+  </div>
+</div>
+
+
+<!-- END: CONTACTUS -->

@@ -1,0 +1,24 @@
+<!-- BEGIN: USER_CREATE -->
+<form method="post" class="container" style="width:400px;" id="form-create">
+   <div class="card card-register mx-auto my-5">
+      <div class="card-header">Create an account</div>
+      <div class="card-body">
+         <input type="text" class="form-control w-100 my-1" name="owner_create_mail" placeholder="Mail">
+         <input type="text" class="form-control w-100 my-1" name="owner_create_name" placeholder="Full name">
+         <input type="text" class="form-control w-100 my-1" name="owner_create_phone" placeholder="Phone number">
+         <input type="text" class="form-control w-100 my-1" name="owner_create_address" placeholder="Address">
+         <input type="text" class="form-control w-100 my-1" name="owner_create_city" placeholder="City">
+         <input type="text" class="form-control w-100 my-1" name="owner_create_country" placeholder="Country">
+         <select class="custom-select my-1" name="owner_create_type">
+            <option value="1">Owner</option>
+            <option value="2" selected>Administrator</option>
+            <option value="3">Non-super user</option>
+         </select>
+         <div class="text-right w-100" style="margin-top:2rem;">
+            <button class="btn btn-success" type="submit" name="owner_create_save">Save</button>
+            <button class="btn btn-secondary" type="reset">Reset</button>
+         </div>
+      </div>
+   </div>
+</form>
+<!-- END: USER_CREATE -->

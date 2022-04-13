@@ -1,0 +1,214 @@
+<!-- BEGIN: LAYOUT -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta http-equiv="Cache-control" content="no-cache">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="description" content="Hire me : hackedbyneot@gmail.com">
+   <meta name="author" content="nhactung">
+   <link rel="icon" href="https://www.zoho.com/reports/help/images/admin.png">
+   <title>Administrator</title>
+   <link href="{baseUrl}/admin/css/global.css" rel="stylesheet" type="text/css">
+   <link href="{baseUrl}/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet" type="text/css">
+   <link href="{baseUrl}/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+   <link href="{baseUrl}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+   <!-- Bootstrap core JavaScript-->
+   <script src="{baseUrl}/vendor/jquery/jquery.min.js" type="text/javascript"></script>
+   <script src="{baseUrl}/vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+   <!-- Navigation-->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+         <ul class="navbar-nav navbar-sidenav" id="functionBar">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Manage">
+               <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#selectManaging" data-parent="#functionBar">
+                  <i class="fa fa-fw fa-table"></i>
+                  <span class="nav-link-text">Manage</span>
+               </a>
+               <ul class="sidenav-second-level collapse" id="selectManaging">
+                  <li>
+                     <a href="?mod=manage&act=orders">Orders</a>
+                  </li>
+                  <li>
+                     <a href="?mod=manage&act=products">Eye Glasses</a>
+                  </li>
+                  <li>
+                        <a href="?mod=manage&act=clense">Contact Lenses</a>
+                     </li>
+               </ul>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
+               <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#selectSetting" data-parent="#functionBar">
+                  <i class="fa fa-fw fa-wrench"></i>
+                  <span class="nav-link-text">Settings</span>
+               </a>
+               <ul class="sidenav-second-level collapse" id="selectSetting">
+                  <li>
+                     <a href="?mod=account&act=password">Change password</a>
+                  </li>
+                  <li>
+                     <a href="?mod=account&act=profile">Edit profile</a>
+                  </li>
+               </ul>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Theme">
+               <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#selectTheme" data-parent="#functionBar">
+                  <i class="fa fa-fw fa-link"></i>
+                  <span class="nav-link-text">Appearance</span>
+               </a>
+               <ul class="sidenav-second-level collapse" id="selectTheme">
+                  <li>
+                     <a href="#">
+                        <label class="switch">
+                           <input type="checkbox">
+                           <span class="slider round" onclick="toggleNavbar()"></span>
+                        </label>&nbsp;&nbsp;&nbsp;Static navbar</a>
+                  </li>
+                  <li>
+                     <a href="#">
+                        <label class="switch">
+                           <input type="checkbox">
+                           <span class="slider round" onclick="toggleTheme()"></span>
+                        </label>&nbsp;&nbsp;&nbsp;Light theme</a>
+                  </li>
+               </ul>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
+               <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#rootaccess" data-parent="#functionbar">
+                  <i class="fa fa-fw fa-sitemap"></i>
+                  <span class="nav-link-text">Root access</span>
+               </a>
+               <ul class="sidenav-second-level collapse" id="rootaccess">
+                  <li>
+                     <a href="?mod=account&act=create">Create account</a>
+                  </li>
+                  <li>
+                     <a href="?mod=account&act=list">User list</a>
+                  </li>
+                  <li>
+                     <a href="?mod=manage&act=preference">Website preference</a>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+         <ul class="navbar-nav sidenav-toggler">
+            <li class="nav-item" style="height:56px;">
+               <a class="nav-link text-center mt-2" id="sidenavToggler">
+                  <i class="fa fa-fw fa-angle-left"></i>
+               </a>
+            </li>
+         </ul>
+         <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+               <a class="nav-link">Hello, {user_name}</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" data-toggle="modal" data-target="#logout_confirm">
+                  <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+            </li>
+         </ul>
+      </div>
+   </nav>
+   <div class="content-wrapper">
+      <div class="container-fluid">
+         <!-- Breadcrumbs-->
+         <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+               <a href="{baseUrl}/admin">{path}</a>
+            </li>{function}</ol>
+         <div class="row">
+            <div class="col-12">{admin_content}</div>
+         </div>
+      </div>
+      <!-- /.container-fluid-->
+      <!-- /.content-wrapper-->
+      <footer class="sticky-footer">
+         <div class="container">
+            <div class="text-center">
+               <small>Copyright © Start Bootstrap Template.</small>
+            </div>
+         </div>
+      </footer>
+      <!-- Scroll to Top Button-->
+      <a class="scroll-to-top rounded" href="#page-top">
+         <i class="fa fa-angle-up"></i>
+      </a>
+      <!-- Logout Modal-->
+      <div class="modal fade" id="logout_confirm" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="eModalLabel">Ready to leave?</h5>
+                  <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">×</span>
+                  </button>
+               </div>
+               <div class="modal-body">Are you sure to exit ?</div>
+               <div class="modal-footer">
+                  <form method="post">
+                     <div>
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <button class="btn btn-primary" type="submit" name="Logout">Logout</button>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- Core plugin JavaScript-->
+   <script src="{baseUrl}/vendor/jquery-easing/jquery.easing.min.js" type="text/javascript"></script>
+   <!-- Javascript for tables -->
+   <script src="{baseUrl}/vendor/datatables/jquery.dataTables.js" type="text/javascript"></script>
+   <script src="{baseUrl}/vendor/datatables/dataTables.bootstrap4.js" type="text/javascript"></script>
+   <!-- Custom scripts for all pages-->
+   <script src="{baseUrl}/admin/js/sb-admin.js" type="text/javascript"></script>
+   <script src="{baseUrl}/admin/js/sb-admin-datatables.min.js" type="text/javascript"></script>
+   <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js" type="text/javascript"></script>
+   <script src="{baseUrl}/admin/js/global.js" type="text/javascript"></script>
+</body>
+</html>
+<!-- END: LAYOUT -->
+
+<!-- BEGIN: LOGIN -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta http-equiv="Cache-control" content="no-cache">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="description" content="Hire me : hackedbyneot@gmail.com">
+   <meta name="author" content="nhactung">
+   <link rel="icon" href="https://www.zoho.com/reports/help/images/admin.png">
+   <title>Administrator</title>
+   <link rel='stylesheet' type='text/css' href='{baseUrl}/admin/css/global.css'>
+   <link href="{baseUrl}/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+   <link href="{baseUrl}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+   <div class="wrapper">
+      <form class="form-signin" id="admin_Login" method="post">
+         <h3 class="form-signin-heading h3" align="center">Eyeonic project</h3>
+         <input type="text" class="form-control has-feedback" name="admin_acc" value="owner@mail.neot" required>
+         <input type="password" class="form-control mt-1" name="admin_pw" placeholder="Password" required autofocus>
+         
+         <button class="btn btn-lg btn-primary btn-block" type="submit" name="Login" style="margin-top:2rem;">Login</button>
+      </form>
+   </div>
+   <script src="{baseUrl}/vendor/jquery/jquery.min.js" type="text/javascript"></script>
+   <script src="{baseUrl}/vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+   <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js" type="text/javascript"></script>
+   <script src="{baseUrl}/js/global.js"></script>
+</body>
+</html>
+<!-- END: LOGIN -->

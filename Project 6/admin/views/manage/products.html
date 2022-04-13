@@ -1,0 +1,290 @@
+<!-- BEGIN: PRODUCT_LIST -->
+<style media="screen">
+   #dataTable select[name*='tbl_product_status_'] {
+      padding-left: 5px;
+   }
+</style>
+<div class="card mb-3">
+   <div class="card-header">
+      <form class="" method="post">
+         <select class="custom-select w-20" name="tbl_options_sex">
+            <option>Select gender</option>
+            <option value="0">Uni-sex</option>
+            <option value="1">Male</option>
+            <option value="2">Female</option>
+         </select>
+         <select class="custom-select w-20" name="tbl_options_cat">
+            <option>Select category</option>
+            <option value="1">Eyeglasses</option>
+            <option value="2">Multifocals</option>
+            <option value="3">Sunglasses</option>
+            <option value="4">Rx. Sunglasses</option>
+         </select>
+         <select class="custom-select w-20" name="tbl_options_brand">
+            <option>Select brand</option>
+            <!-- BEGIN: FILTER_BRAND -->
+            <option value="{FILTER_BRAND.id}">{FILTER_BRAND.name}</option>
+            <!-- END: FILTER_BRAND -->
+         </select>
+         <button type="submit" class="btn btn-primary" id="tbl_view_data" name="filter_btn" disabled>OK</button>
+         <a href='' role="button" class="btn btn-outline-dark float-right disabled" data-toggle="modal" data-target="#product_add"
+            id="tbl_add_btn">ADD</a>
+      </form>
+   </div>
+   <div class="card-body">
+      <div class="table-responsive">
+         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+               <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Material</th>
+                  <th>Color</th>
+                  <th>Description</th>
+                  <th>Price</th>
+                  <th style="width:90px;">Status</th>
+                  <th style="width:88px;"></th>
+               </tr>
+            </thead>
+            <tfoot>
+               <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Material</th>
+                  <th>Color</th>
+                  <th>Description</th>
+                  <th>Price</th>
+                  <th style="width:90px;">Status</th>
+                  <th style="width:88px;"></th>
+               </tr>
+            </tfoot>
+            <tbody>
+               <!-- BEGIN: PRODUCT_INFO -->
+               <tr>
+                  <td>{PRODUCT_INFO.id}</td>
+                  <td>{PRODUCT_INFO.name}</td>
+                  <td>{PRODUCT_INFO.material}</td>
+                  <td>{PRODUCT_INFO.color}</td>
+                  <td style="text-align:justify;">{PRODUCT_INFO.description}</td>
+                  <td>${PRODUCT_INFO.price}</td>
+                  <td>
+                     <form name="form_tbl_status" method="post">
+                        <script type="text/javascript">
+                           $(document).ready(function () {
+                              var status = $("select[name='tbl_product_status_{PRODUCT_INFO.id}']");
+                              status.val('{PRODUCT_INFO.instock_stt}');
+                           });
+                        </script>
+                        <select class="custom-select custom-select-sm w-100" name="tbl_product_status_{PRODUCT_INFO.id}"
+                           onchange="this.form.submit()">
+                           <option value="0">Available</option>
+                           <option value="1">Unavailable</option>
+                           <option value="2">Contact</option>
+                        </select>
+                     </form>
+                  </td>
+                  <td style="width:97px;">
+                     <div class="btn-group">
+                        <a role="button" class="btn btn-secondary text-light" data-toggle="modal" data-target="#product_edit"
+                           onclick="product_passParam('{PRODUCT_INFO.id}', '{PRODUCT_INFO.name}', '{PRODUCT_INFO.origin}', '{PRODUCT_INFO.material}', '{PRODUCT_INFO.description}', '{PRODUCT_INFO.size}', '{PRODUCT_INFO.shape}', '{PRODUCT_INFO.color}', '{PRODUCT_INFO.warranty}', '{PRODUCT_INFO.price}', '{PRODUCT_INFO.gender}', '{PRODUCT_INFO.brand_id}', '{PRODUCT_INFO.category_id}', '{PRODUCT_INFO.len_width}', '{PRODUCT_INFO.len_height}', '{PRODUCT_INFO.bridge_width}', '{PRODUCT_INFO.temple_length}');">Edit</a>
+                        <a role="button" class="btn btn-danger text-light" data-toggle="modal" data-target="#product_delete"
+                           onclick="product_passParam('{PRODUCT_INFO.id}');">Delete</a>
+                     </div>
+                  </td>
+               </tr>
+               <!-- END: PRODUCT_INFO -->
+            </tbody>
+         </table>
+      </div>
+   </div>
+   <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+   <div class="modal fade" id="product_add" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document" style="max-width:50%;">
+         <div class="modal-content">
+            <form method="post" name="form-product-add" id="form-product-add">
+               <div class="modal-header">
+                  <h6 class="modal-title" id="eModalLabel">Add a product</h6>
+                  <select class="custom-select custom-select-sm w-25 float-right" name="product_add_stt">
+                     <option value="0">Available</option>
+                     <option value="1">Unavailable</option>
+                     <option value="2">Contact</option>
+                  </select>
+               </div>
+               <div class="modal-body">
+                  <div class="form-row">
+                     <div class="col-md-12">
+                        <label for="name">Name </label>
+                        <input type="text" id="name" class="form-control form-control-sm w-100 mb-1" name="product_add_name"> </div>
+                  </div>
+                  <div class="form-row">
+                     <div class="col-md-3">
+                        <label for="lwidth">Lens width </label>
+                        <input type="text" id="lwidth" class="form-control form-control-sm w-100 mb-1"
+                           name="product_add_lwidth"> </div>
+                     <div class="col-md-3">
+                        <label for="lheight">Lens height </label>
+                        <input type="text" id="lheight" class="form-control form-control-sm w-100 mb-1"
+                           name="product_add_lheight"> </div>
+                     <div class="col-md-3">
+                        <label for="bwidth">Bridge width </label>
+                        <input type="text" id="bwidth" class="form-control form-control-sm w-100 mb-1"
+                           name="product_add_bwidth"> </div>
+                     <div class="col-md-3">
+                        <label for="tlen">Temple length </label>
+                        <input type="text" id="tlen" class="form-control form-control-sm w-100 mb-1"
+                           name="product_add_tlen"> </div>
+                  </div>
+                  <div class="form-row">
+                     <div class="col-md-4">
+                        <label for="origin">Origin </label>
+                        <input type="text" id="origin" class="form-control form-control-sm w-100 mb-1" name="product_add_origin"> </div>
+                     <div class="col-md-4">
+                        <label for="material">Material </label>
+                        <input type="text" id="material" class="form-control form-control-sm w-100 mb-1"
+                           name="product_add_material"> </div>
+                     <div class="col-md-4">
+                        <label for="warranty">Warranty </label>
+                        <input type="text" id="warranty" class="form-control form-control-sm w-100 mb-1"
+                           name="product_add_warranty"> </div>
+                  </div>
+                  <div class="form-row">
+                     <div class="col-md-3">
+                        <label for="shape">Shape </label>
+                        <input type="text" id="shape" class="form-control form-control-sm w-100 mb-1" name="product_add_shape"> </div>
+                     <div class="col-md-3">
+                        <label for="size">Size </label>
+                        <input type="text" id="size" class="form-control form-control-sm w-100 mb-1" name="product_add_size"> </div>
+                     <div class="col-md-3">
+                        <label for="color">Color </label>
+                        <input type="text" id="color" class="form-control form-control-sm w-100 mb-1" name="product_add_color"> </div>
+                     <div class="col-md-3">
+                        <label for="price">Price </label>
+                        <input type="text" id="price" class="form-control form-control-sm w-100 mb-1" name="product_add_price"> </div>
+                  </div>
+                  <label for="description">Description </label>
+                  <textarea id="description" name="product_add_descr" class="form-control form-control-sm w-100 mb-1 text-justify"
+                     form="form-product-add" rows="4"></textarea>
+               </div>
+               <div class="modal-footer">
+                  <button class="btn btn-sm btn-secondary" type="button" data-dismiss="modal">Discard</button>
+                  <button class="btn btn-sm btn-success" type="submit" name="product_add_save">Save</button>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+   <div class="modal fade" id="product_delete" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header"></div>
+            <div class="modal-body">
+               <h6 class="modal-title" id="eModalLabel">Delete
+                  <span></span> ?</h6>
+            </div>
+            <div class="modal-footer">
+               <form class="" method="post">
+                  <button class="btn btn-sm btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                  <button class="btn btn-sm btn-danger" type="submit" name="product_delete">Save</button>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="modal fade" id="product_edit" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document" style="max-width:50%;">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h6 class="modal-title" id="eModalLabel">Edit item
+                  <span></span>
+               </h6>
+            </div>
+            <form method="post" name="form-product-edit" id="form-product-edit">
+               <div class="modal-body">
+                  <div class="form-row">
+                     <div class="col-md-4">
+                        <select class="custom-select custom-select-sm w-100 mb-1" name="product_edit_sex">
+                           <option value="0">Uni-sex</option>
+                           <option value="1">Male</option>
+                           <option value="2">Female</option>
+                        </select>
+                     </div>
+                     <div class="col-md-4">
+                        <select class="custom-select custom-select-sm w-100 mb-1" name="product_edit_cat">
+                           <option value="1">Eyeglasses</option>
+                           <option value="2">Multifocals</option>
+                           <option value="3">Sunglasses</option>
+                           <option value="4">Rx. Sunglasses</option>
+                        </select>
+                     </div>
+                     <div class="col-md-4">
+                        <select class="custom-select custom-select-sm w-100 mb-1" name="product_edit_brand">
+                        <!-- BEGIN: FILTER_BRAND -->
+                        <!-- END: FILTER_BRAND -->
+                        </select>
+                     </div>
+                  </div>
+                  <div class="form-row">
+                     <div class="col-md-12">
+                        <label for="name">Name </label>
+                        <input type="text" id="name" class="form-control form-control-sm w-100 mb-1" name="product_edit_name"> </div>
+                  </div>
+                  <div class="form-row">
+                     <div class="col-md-3">
+                        <label for="lwidth">Lens width </label>
+                        <input type="text" id="lwidth" class="form-control form-control-sm w-100 mb-1"
+                           name="product_edit_lwidth"> </div>
+                     <div class="col-md-3">
+                        <label for="lheight">Lens height </label>
+                        <input type="text" id="lheight" class="form-control form-control-sm w-100 mb-1"
+                           name="product_edit_lheight"> </div>
+                     <div class="col-md-3">
+                        <label for="bwidth">Bridge width </label>
+                        <input type="text" id="bwidth" class="form-control form-control-sm w-100 mb-1"
+                           name="product_edit_bwidth"> </div>
+                     <div class="col-md-3">
+                        <label for="tlen">Temple length </label>
+                        <input type="text" id="tlen" class="form-control form-control-sm w-100 mb-1"
+                           name="product_edit_tlen"> </div>
+                  </div>
+                  <div class="form-row">
+                     <div class="col-md-4">
+                        <label for="origin">Origin </label>
+                        <input type="text" id="origin" class="form-control form-control-sm w-100 mb-1" name="product_edit_origin"> </div>
+                     <div class="col-md-4">
+                        <label for="material">Material </label>
+                        <input type="text" id="material" class="form-control form-control-sm w-100 mb-1"
+                           name="product_edit_material"> </div>
+                     <div class="col-md-4">
+                        <label for="warranty">Warranty </label>
+                        <input type="text" id="warranty" class="form-control form-control-sm w-100 mb-1"
+                           name="product_edit_warranty"> </div>
+                  </div>
+                  <div class="form-row">
+                     <div class="col-md-3">
+                        <label for="shape">Shape </label>
+                        <input type="text" id="shape" class="form-control form-control-sm w-100 mb-1" name="product_edit_shape"> </div>
+                     <div class="col-md-3">
+                        <label for="size">Size </label>
+                        <input type="text" id="size" class="form-control form-control-sm w-100 mb-1" name="product_edit_size"> </div>
+                     <div class="col-md-3">
+                        <label for="color">Color </label>
+                        <input type="text" id="color" class="form-control form-control-sm w-100 mb-1" name="product_edit_color"> </div>
+                     <div class="col-md-3">
+                        <label for="price">Price </label>
+                        <input type="text" id="price" class="form-control form-control-sm w-100 mb-1" name="product_edit_price"> </div>
+                  </div>
+                  <label for="description">Description </label>
+                  <textarea id="description" name="product_edit_descr" class="form-control form-control-sm w-100 mb-1 text-justify"
+                     form="form-product-edit" rows="4"></textarea>
+               </div>
+               <div class="modal-footer float-right">
+                  <button class="btn btn-sm btn-secondary" type="button" data-dismiss="modal">Discard</button>
+                  <button class="btn btn-sm btn-warning" type="submit" name="product_edit_save">Save</button>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- END: PRODUCT_LIST -->

@@ -1,0 +1,25 @@
+<!-- BEGIN: ADMIN_PROFILE -->
+<form method="post" class="container mb-4" style="width:400px;">
+   <div class="card card-register mx-auto mt-5">
+      <div class="card-header">USER {prf_id}</div>
+      <div class="card-body">
+         <!-- BEGIN: PROFILE_INFO -->
+         <div class="mt-2">Name</div>
+         <input type="text" class="form-control w-100 my-1" name="prf_name" value="{PROFILE_INFO.full_name}" autofocus>
+         <div class="mt-2">Phone number</div>
+         <input type="text" class="form-control w-100 my-1" name="prf_phone" value="{PROFILE_INFO.phone_num}">
+         <div class="mt-2">Address</div>
+         <input type="text" class="form-control w-100 my-1" name="prf_address" value="{PROFILE_INFO.address}">
+         <div class="mt-2">City</div>
+         <input type="text" class="form-control w-100 my-1" name="prf_city" value="{PROFILE_INFO.city}">
+         <div class="mt-2">Country</div>
+         <input type="text" class="form-control w-100 my-1" name="prf_country" value="{PROFILE_INFO.country}">
+         <!-- END: PROFILE_INFO -->
+         <div class="float-right mt-4">
+            <button class="btn btn-success" type="submit" name="prf_save">Save</button>
+            <button class="btn btn-secondary" type="reset">Reset</button>
+         </div>
+      </div>
+   </div>
+</form>
+<!-- END: ADMIN_PROFILE -->
