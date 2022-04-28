@@ -1,4 +1,7 @@
 ﻿
+ Video file: video-final.mp4
+ PDF: project-7.pdf
+ 
 My topic is shop glasses, Eyeonic Glasses. I have created a website that selling glasses,
 base on this https://www.glassesusa.com/ website.
 
