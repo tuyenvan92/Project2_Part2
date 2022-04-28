@@ -1,5 +1,5 @@
 ﻿
-Out topic is shop glasses, Eyeonic Glasses. I have created a website that selling glasses,
+My topic is shop glasses, Eyeonic Glasses. I have created a website that selling glasses,
 base on this https://www.glassesusa.com/ website.
 
 To use the site, at first you'll wish to install the database to your local php myadmin by the code in the file eyeonic.sql.
