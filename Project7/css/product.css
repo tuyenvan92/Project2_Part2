@@ -1,0 +1,94 @@
+
+/* CSS Document */
+.advertise-productpage{
+	margin-top:30px;	
+}
+.navsub-menu{
+	margin-top:15px;	
+}
+.navsub-menu a{
+	color:#000;
+}
+.navsub-menu a:hover{
+	text-decoration:none;
+}
+#slice-img{
+	margin-top:15px;
+}
+.small-img{
+	margin-bottom:5px;
+	border:solid #CAC5C5 2px;
+	border-radius:2px;	
+}
+.small-img:hover{
+	border:solid #999 2px;
+	border-radius:2px;
+}
+.alter-img{
+	color:#CCC;	
+}
+.rate{
+	color:#e6b800;	
+}
+.introduction{
+	margin-top:10px;
+}
+.introduction h5{
+	color:#77abe6;
+}
+#btnOrder{
+	margin:8px 0px 0px 10px;
+	width:150px;
+	background-color:#ff6c00;
+}
+#btnOrder a{
+	color:#FFF;
+}
+#btnOrder a:hover{
+	text-decoration:none;
+}
+.frame-measurements{
+	font:inherit;
+	font-size:18px;
+	font-weight:500;	
+}
+.intro-brand{
+	margin-left:10px;
+	color:#666;	
+}
+.detail{
+	margin-left:10px;
+	font-weight:800;
+	color:#666;	
+	font-size:17px;	
+}
+.detail-info{
+	margin-left:10px;
+	color:#666;
+}
+strong{
+	font-weight:700;	
+}
+.measurements{
+	margin:15 0 15 10;
+	font-weight:800;
+	color:#666;	
+	font-size:17px;
+}
+.detail-mea{
+	color:#666;
+	margin-left:10px;
+}
+.glasses-size{
+	margin-bottom:25px;
+}
+.glasses-size span{
+	margin-left:20px;	
+}
+#cus-al-like{
+	margin-top:40px;	
+}
+#cus-like-img p{
+	text-align:center;
+	margin-top:10px;
+}

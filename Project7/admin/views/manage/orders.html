@@ -1,0 +1,169 @@
+<!-- BEGIN: ORDER_LIST -->
+<style media="screen">
+   .tbl-order-inf th:last-child,
+   .tbl-order-inf td:last-child {
+      width: 5%;
+   }
+
+   .tbl-order-inf th:first-child,
+   .tbl-order-inf td:first-child {
+      width: 5%;
+   }
+
+   .tbl-order-inf th:nth-child(2),
+   .tbl-order-inf td:nth-child(2) {
+      width: 20%;
+   }
+
+   .tbl-order-inf th:nth-child(7n-1),
+   .tbl-order-inf td:nth-child(7n-1) {
+      width: 15%;
+   }
+
+   .tbl-order-inf th:nth-child(4n+0),
+   .tbl-order-inf td:nth-child(4n+0) {
+      width: 30%;
+   }
+
+   #detail #dataTable th:first-child,
+   #detail #dataTable td:first-child {
+      width: 40%;
+   }
+
+   #detail #dataTable th:nth-child(2),
+   #detail #dataTable td:nth-child(2) {
+      width: 40%
+   }
+</style>
+<div class="card mb-3">
+   <div class="card-header">
+      <form method="post">
+         <select class="custom-select w-20" name="tbl_options_time">
+            <option>Select time</option>
+            <option value="0">Today</option>
+            <option value="1">This week</option>
+            <option value="2">This month</option>
+            <option value="3">This year</option>
+            <option value="4">All</option>
+         </select>
+         <button type="submit" class="btn btn-primary" id="tbl_view_order" name="filter_btn" disabled>OK</button>
+         <a href="?mod=manage&act=orders" role="button" class="btn btn-outline-success float-right">Refresh</a>
+      </form>
+   </div>
+   <div class="card-body">
+      <div class="table-responsive">
+         <table class="table table-bordered tbl-order-inf" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+               <tr>
+                  <th>ID</th>
+                  <th>Customer (CODE-NAME)</th>
+                  <th>Phone</th>
+                  <th>Address</th>
+                  <th>Time</th>
+                  <th>Status</th>
+                  <th></th>
+               </tr>
+            </thead>
+            <tfoot>
+               <tr>
+                  <th>ID</th>
+                  <th>Customer</th>
+                  <th>Phone</th>
+                  <th>Address</th>
+                  <th>Time</th>
+                  <th>Status</th>
+                  <th></th>
+               </tr>
+            </tfoot>
+            <tbody>
+               <!-- BEGIN: ORDER_INFO -->
+               <tr>
+                  <td>{ORDER_INFO.id}</td>
+                  <td>{ORDER_INFO.customer}</td>
+                  <td>{ORDER_INFO.phone}</td>
+                  <td class="text-justify">{ORDER_INFO.address}</td>
+                  <td>{ORDER_INFO.order_date}</td>
+                  <td>
+                     <form name="form-order-stt" method="post">
+                        <script type="text/javascript">
+                           $(document).ready(function () {
+                              var status = $("select[name='tbl_order_status_{ORDER_INFO.id}']");
+                              status.val('{ORDER_INFO.stt}');
+                              switch (parseInt(status.val()))
+                              {
+                                 case 0:
+                                    status.addClass('bg-warning text-dark');
+                                    break;
+                                 case 2:
+                                    status.addClass('bg-danger text-light');
+                                    break;
+                                 case 3:
+                                    status.attr("disabled", "");
+                                    status.addClass('bg-success text-light');
+                                    break;
+                                 default:
+                                    status.addClass('bg-light text-dark');
+                              }
+                           });
+                        </script>
+                        <select class="custom-select custom-select-sm w-100" name="tbl_order_status_{ORDER_INFO.id}"
+                           onchange="this.form.submit()">
+                           <option value="0" class="bg-warning text-dark">Pending</option>
+                           <option value="1" class="bg-light text-dark">Shipping</option>
+                           <option value="2" class="bg-danger text-light">Broken</option>
+                           <option value="3" class="bg-success text-light">Sucess</option>
+                        </select>
+                     </form>
+                  </td>
+                  <td>
+                     <div class="btn-group">
+                        <a role="button" class="btn btn-light" data-toggle="modal" data-target="#detail" onclick="order_passParam('{ORDER_INFO.id}', '{ORDER_INFO.product}', '{ORDER_INFO.quantity}', '{ORDER_INFO.price}', '{ORDER_INFO.total_cost}', '{ORDER_INFO.notes}');">Detail</a>
+                     </div>
+                  </td>
+               </tr>
+               <!-- END: ORDER_INFO -->
+            </tbody>
+         </table>
+      </div>
+   </div>
+   <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+   <div class="modal fade" id="detail" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document" style="max-width:50%;">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h6 class="modal-title" id="eModalLabel">Order
+                  <span></span>
+               </h6>
+            </div>
+            <div class="modal-body">
+               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                     <tr>
+                        <th>Customer's notes</th>
+                        <th>Product (CODE - NAME)</th>
+                        <th>Qty</th>
+                        <th>Price</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td id="_cnote" class="text-justify"></td>
+                        <td id="_product"></td>
+                        <td id="_qty" class="text-center"></td>
+                        <td id="_price"></td>
+                     </tr>
+                     <tr>
+                        <td colspan="3" class="text-right">
+                           <b>Total </b>
+                        </td>
+                        <td id="_total"></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- END: ORDER_LIST -->

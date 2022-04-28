@@ -1,0 +1,186 @@
+<!-- BEGIN: CL_LIST -->
+<style media="screen">
+   #dataTable select[name*='tbl_product_status_'] {
+      padding-left: 5px;
+   }
+</style>
+<div class="card mb-3">
+   <div class="card-header">
+      <a href='' role="button" class="btn btn-outline-dark float-right" data-toggle="modal" data-target="#cl_add" >ADD</a>
+   </div>
+   <div class="card-body">
+      <div class="table-responsive">
+         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+               <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Price</th>
+                  <th style="width:88px;"></th>
+               </tr>
+            </thead>
+            <tfoot>
+               <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Price</th>
+                  <th style="width:88px;"></th>
+               </tr>
+            </tfoot>
+            <tbody>
+               <!-- BEGIN: CL_INFO -->
+               <tr>
+                  <td>{CL_INFO.id}</td>
+                  <td>{CL_INFO.name}</td>
+                  <td style="text-align:justify;">{CL_INFO.description}</td>
+                  <td>${CL_INFO.price}</td>
+                  </td>
+                  <td style="width:97px;">
+                     <div class="btn-group">
+                        <a role="button" class="btn btn-secondary text-light" data-toggle="modal" data-target="#cl_edit" onclick="cl_passParam('{CL_INFO.id}', '{CL_INFO.name}', '{CL_INFO.price}', '{CL_INFO.description}', '{CL_INFO.inbox_qty}', '{CL_INFO.type}', '{CL_INFO.manufacturer}', '{CL_INFO.image1}', '{CL_INFO.image2}', '{CL_INFO.brand}');">Edit</a>
+                        <a role="button" class="btn btn-danger text-light" data-toggle="modal" data-target="#cl_delete" onclick="cl_passParam('{CL_INFO.id}');">Delete</a>
+                     </div>
+                  </td>
+               </tr>
+               <!-- END: CL_INFO -->
+            </tbody>
+         </table>
+      </div>
+   </div>
+   <div class="modal fade" id="cl_delete" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header"></div>
+            <div class="modal-body">
+               <h6 class="modal-title" id="eModalLabel">Delete
+                  <span></span> ?</h6>
+            </div>
+            <div class="modal-footer">
+               <form class="" method="post">
+                  <button class="btn btn-sm btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                  <button class="btn btn-sm btn-danger" type="submit" name="cl_delete">Save</button>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="modal fade" id="cl_edit" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document" style="max-width:50%;">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h6 class="modal-title" id="eModalLabel">Edit item
+                  <span></span>
+               </h6>
+            </div>
+            <form method="post" name="form-product-edit" id="form-product-edit">
+               <div class="modal-body">
+                  <div class="form-row">
+                     <div class="col-md-4">
+                        <label for="name">Name </label>
+                        <input type="text" id="name" class="form-control form-control-sm w-100 mb-1" name="cl_edit_name">
+                     </div>
+                     <div class="col-md-4">
+                        <label for="manf">Manufacturer </label>
+                        <input type="text" id="manf" class="form-control form-control-sm w-100 mb-1" name="cl_edit_manf">
+                     </div>
+                     <div class="col-md-4">
+                        <label for="brand">Brand </label>
+                        <input type="text" id="brand" class="form-control form-control-sm w-100 mb-1" name="cl_edit_brand">
+                     </div>
+                  </div>
+                  <div class="form-row">
+                     <div class="col-md-4">
+                        <label for="price">Price </label>
+                        <input type="text" id="price" class="form-control form-control-sm w-100 mb-1" name="cl_edit_price">
+                     </div>
+                     <div class="col-md-4">
+                        <label for="ibqty">Lens in one box </label>
+                        <input type="text" id="ibqty" class="form-control form-control-sm w-100 mb-1" name="cl_edit_ibqty">
+                     </div>
+                     <div class="col-md-4">
+                        <label for="type">Type </label>
+                        <input type="text" id="type" class="form-control form-control-sm w-100 mb-1" name="cl_edit_type">
+                     </div>
+                  </div>
+                  <div class="form-row">
+                     <div class="col-md-6">
+                        <label for="img1">IMG URL 1 </label>
+                        <input type="text" id="img1" class="form-control form-control-sm w-100 mb-1" name="cl_edit_img1">
+                     </div>
+                     <div class="col-md-6">
+                        <label for="img2">IMG URL 2 </label>
+                        <input type="text" id="img2" class="form-control form-control-sm w-100 mb-1" name="cl_edit_img2">
+                     </div>
+                  </div>
+                  <label for="description">Description </label>
+                  <textarea id="description" name="cl_edit_descr" class="form-control form-control-sm w-100 mb-1 text-justify" form="form-product-edit"
+                     rows="4"></textarea>
+               </div>
+               <div class="modal-footer float-right">
+                  <button class="btn btn-sm btn-secondary" type="button" data-dismiss="modal">Discard</button>
+                  <button class="btn btn-sm btn-warning" type="submit" name="cl_edit_save">Save</button>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+
+   <div class="modal fade" id="cl_add" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document" style="max-width:50%;">
+         <div class="modal-content">
+            <form method="post" name="form-product-add" id="form-product-add">
+               <div class="modal-body">
+                  <div class="form-row">
+                     <div class="col-md-4">
+                        <label for="name">Name </label>
+                        <input type="text" id="name" class="form-control form-control-sm w-100 mb-1" name="cl_add_name">
+                     </div>
+                     <div class="col-md-4">
+                        <label for="manf">Manufacturer </label>
+                        <input type="text" id="manf" class="form-control form-control-sm w-100 mb-1" name="cl_add_manf">
+                     </div>
+                     <div class="col-md-4">
+                        <label for="brand">Brand </label>
+                        <input type="text" id="brand" class="form-control form-control-sm w-100 mb-1" name="cl_add_brand">
+                     </div>
+                  </div>
+                  <div class="form-row">
+                     <div class="col-md-4">
+                        <label for="price">Price </label>
+                        <input type="text" id="price" class="form-control form-control-sm w-100 mb-1" name="cl_add_price">
+                     </div>
+                     <div class="col-md-4">
+                        <label for="ibqty">Lens in one box </label>
+                        <input type="text" id="ibqty" class="form-control form-control-sm w-100 mb-1" name="cl_add_ibqty">
+                     </div>
+                     <div class="col-md-4">
+                        <label for="type">Type </label>
+                        <input type="text" id="type" class="form-control form-control-sm w-100 mb-1" name="cl_add_type">
+                     </div>
+                  </div>
+                  <div class="form-row">
+                     <div class="col-md-6">
+                        <label for="img1">IMG URL 1 </label>
+                        <input type="text" id="img1" class="form-control form-control-sm w-100 mb-1" name="cl_add_img1">
+                     </div>
+                     <div class="col-md-6">
+                        <label for="img2">IMG URL 2 </label>
+                        <input type="text" id="img2" class="form-control form-control-sm w-100 mb-1" name="cl_add_img2">
+                     </div>
+                  </div>
+                  <label for="description">Description </label>
+                  <textarea id="description" name="cl_add_descr" class="form-control form-control-sm w-100 mb-1 text-justify" form="form-product-add"
+                     rows="4"></textarea>
+               </div>
+               <div class="modal-footer float-right">
+                  <button class="btn btn-sm btn-secondary" type="button" data-dismiss="modal">Discard</button>
+                  <button class="btn btn-sm btn-warning" type="submit" name="cl_add_save">Save</button>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- END: CL_LIST -->

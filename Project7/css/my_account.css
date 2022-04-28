@@ -1,0 +1,14 @@
+div .modal-content {border-radius: 0;}
+.forgot 
+{
+  text-decoration: #8d8d8d underline;
+  font: italic 14px/1.55em Georgia;
+  color: #8d8d8d;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.modal-header {border: 0; padding: 0 !important;}
+
+ul[role='tablist'] a {outline: 0 !important; color: #6d6d6d; background-color: #d6d6d6; font-size: 13px; border-radius: 0 !important;}
+ul[role='tablist'] a.active {background-color: #fff; color: #6cf !important;}

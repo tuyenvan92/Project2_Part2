@@ -1,0 +1,150 @@
+*
+{
+	text-align: left;
+}
+.body
+{
+	margin-top:50px;
+}
+
+/*ul li
+{
+	list-style-type: none;
+}*/
+ul
+{
+	list-style-type: none;
+}
+ul li.user
+{
+	border:1px  solid #737373;
+	width: 200px;
+	padding-left: 10px;
+	
+	margin-left: 0px;
+}
+.memu_title
+{
+	font-size: 1.1em;
+	color: #fff;
+	margin-bottom: .4em;
+	font-weight: 700;
+	line-height: 1.3em;
+	background: #FF6224;
+	font: inherit;
+	vertical-align: baseline;
+	width: 200px;
+	text-align: center;
+	margin-left: 37px;
+}
+li.user a
+{
+	color: #5f5d5c;
+	text-decoration: none;
+	font-size: 15px;
+}
+.size
+{
+	display: inline-block;
+	box-sizing: border-box;
+	width: 100%;
+	height: 44px;
+	font: bold 16px/40px Arial;
+	color: #4d4d4d;
+	letter-spacing: -.02em;
+	text-align: center;
+	border: 2px solid #4d4d4d;
+	margin-left: 40px;
+	width: 200px;
+}
+ul.sub_select
+{
+	list-style-type: disc;
+	margin-left: 10px;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	font: normal 13px/22px Arial;
+	
+}
+li a
+{
+	color: #5f5d5c;
+
+}
+ul.sub_select li a: hover
+{
+	color: #5f5d5c;
+	text-decoration: none;
+}
+.contact
+{
+	border: 1px solid #000;
+	width: 200px;
+	padding-left: 10px;
+	margin-left: 30px;
+	color: #626262;
+	font-size: 15px;
+	margin-bottom: 20px;
+}
+div.contact b
+{
+	color: #000;
+}
+.title
+{
+	margin: 0;
+	font-size: 1.7em;
+	font-weight: 400;
+	line-height: 1.3em;
+	color: #0a263c;
+	margin-top: 20px;
+}
+.hello
+{
+	color: #6d6d6d;
+	width: 80%;
+}
+.information_title
+{
+	padding-left: 21px;
+	min-height: 17px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	color: #e65505;
+	font-size: 1.1em;
+	text-transform: uppercase;
+}
+.information_subtitle
+{
+	margin: 0;
+    float: left;
+    font-size: 15px;
+    font-weight: 700;
+	line-height: 1.3em;
+	color: #0a263c;
+}
+.information
+{
+	color: #6d6d6d;
+	font-size: 15px;
+	width: 300px;
+}
+table
+{
+	margin-top: 30px;
+}
+tr td a.edit
+{
+	float: right;
+	border: 0;
+	margin-right: 3px;
+	color: #000;
+	font: normal 13px/1.55em Arial,sans-serif;
+	text-decoration: none;
+}
+table
+{
+	border: 1px groove #737373;
+	padding-left: 20px;
+
+}

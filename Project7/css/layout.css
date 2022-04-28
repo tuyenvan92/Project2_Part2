@@ -1,0 +1,280 @@
+
+
+
+#info-row{
+	height: 35px;
+	line-height: 35px;
+	background: #333;
+	color:#FFF;
+	font-weight: bold;
+	font-size: 14px;
+	border-bottom: solid 1px #777;
+
+}
+#info-row .info{
+	width: 26vw;
+	margin-left: -8vw;	
+	margin-top: 10px;
+	height: auto;
+	padding: 10px 10px 10px 10px;
+	border-radius: 3px;
+}
+#info-row .info .title{
+	text-align: center;
+	font-size: 13px;
+}
+#info-row .info .content{
+	padding-top: 10px;
+	text-align: center;
+	font-weight: normal;
+	font-size: 13px;
+	line-height: 22px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.top-row{
+	background: #333;
+	height: 35px;
+	margin-top: 0;
+	overflow-y: hidden;
+}
+
+
+.top-row .open-time{
+	float: left;
+	width:67%;
+
+	line-height: 35px;
+	font-size: 15px;
+	color: #fff;
+	padding-left: 70px;
+}
+#account-active {
+	width: 95%;
+	margin-left: 15%;
+	margin-top: -30px;
+
+	
+
+}
+.account-active-list{
+	
+	text-align: center;
+	list-style-type: none;
+}
+
+.account-active{
+
+	display: block;
+	width: auto;
+	font-size: 13px;
+	color: #fff;
+	float: left;
+	margin-left: -17px;
+	
+}
+.account-active:hover{
+	color: #8a8a89;
+}
+.account-active:active{
+	border: none;
+	color: #fff;
+}
+/* ------------------- CSS NAVBAR BLOCK ---------------*/
+
+
+.navbar {
+    height: 90px;
+   
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    max-width: 1440px;
+    min-width: 965px;
+    margin: 0 auto;
+    padding: 0 20px;
+    
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+    padding-left: 40px;
+}
+
+.navbar .logo {
+	display: block;
+	
+    width: 150px;
+    height: 90px;
+    line-height: 80px;
+    display: block;
+    margin-left: 2vw;
+    font-size: 20px;
+
+}
+.navbar .nav-item{
+  	
+    display: block;
+    width: auto !important;
+    padding: 0px 6px 0 6px ; 
+    font-size: 17px;
+    line-height: 80px;
+    height: 90px;
+    
+}
+.navbar .nav-item:hover{
+	border-bottom: solid 2px #3fabe6;
+	background: #FFF !important;
+}
+.navbar .nav-item .nav-link{
+	color: black;
+}
+.dropdown-menu{
+	z-index: 1;
+    -webkit-box-shadow: 0 6px 8px rgba(0,0,0,.3);
+    box-shadow: 0 6px 8px rgba(0,0,0,.3);
+	width: 250px;
+	border-radius: 1px;
+	padding: 0 3px 0 3px; 
+	
+	border: none;
+}
+.dropdown-menu .dropdown-item{
+	line-height: 33px;
+	height: 45px !important;
+}
+
+.dropdown-menu .dropdown-divider{
+	width: 90%;
+	margin: auto;
+}
+.dropdown-menu .dropdown-item:hover{
+	color: #3fabe6;
+	background: #FFF !important;
+}
+
+.dropdown:hover .dropdown-menu{
+	display: block !important;
+}
+.dropdown:active .dropdown-menu{
+	display: none;
+}
+#search_form{
+	display:block;
+	height: 100%;
+}
+.nav-search-bar{
+	display: block;
+	float: right;
+	margin-left: 110px;
+
+}
+.nav-search-bar .nav-search-box{
+	
+
+}
+
+
+/*---------------------------------------------------------*/
+
+main{
+	height: auto;
+}
+
+
+.section-input{
+	width: 70%;
+	margin: auto;
+}
+.error{
+	width:70%;margin: auto;margin-top: 50px;
+}
+
+
+
+footer
+{
+	display: block;
+	background-color: rgb(51, 51, 51);
+	padding: 20px 0;
+	margin-top: 1%;
+	font-size: 14px;
+}
+#footer-inner {}
+#footer-column-links {padding: 1.530612244% 0 0;}
+#footer-column-links h3
+{
+	font-size: 18px;
+	font-weight: 700;
+	color: #fff;
+	margin: 5px 0;
+	height: 40px;
+}
+
+.list-unstyled .text-muted{
+	line-height: 27px;
+	display: block;
+	height: 27px;
+	color: #fff !important;
+}
+.company-name{
+	background: linen;
+	text-align: center;
+	color: #4d4d4d;
+	font-size: 14px;
+	height: 40px;
+	line-height: 40px;
+	margin-top: 20px;
+}
+ 
+/*-----------------------list-search---------------------------------------------*/
+.list-search{
+	padding: 10px 10px 0 10px;display: block;background: #FFF;margin-bottom: -16px;width:auto;color: #555;
+}
+.list-search:hover{
+	text-decoration: none;
+	color: #ff0081
+}
+
+/*-------------------------------------------------------------------------------*/
+@media only screen and (max-width:1280px){
+	.nav-search-bar{
+	
+	margin-left: 30px;
+
+}
+}
+
+@media only screen and (max-width:1200px){
+	.top-row .open-time{
+		padding-left: 32px;
+	}
+
+	.navbar .logo{
+		margin-left: -10px;
+	}
+	.navbar .nav-item{
+  
+    display: block;
+    width: auto !important;
+    padding: 0px 0px 0 0px ; 
+    font-size: 16px;
+    margin: 0 -3px 0 -3px;
+    resize: vertical;
+    
+}
+
+.nav-search-bar{
+	resize: vertical;
+	width: 220px;
+	margin-left:20px;
+}
+.nav-search-bar .nav-search-box{
+	width: 150px;
+} 
+}

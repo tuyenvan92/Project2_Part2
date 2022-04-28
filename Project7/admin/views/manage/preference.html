@@ -1,0 +1,79 @@
+<!-- BEGIN: PREFERENCE -->
+<div class="card mb-4">
+   <div class="card-body">
+      <form class="container table-responsive" method="post" style="width:80%" enctype="multipart/form-data" name="form-site-inf">
+         <!-- BEGIN: INFO -->
+         <table class="table table-light">
+            <tr>
+               <td>
+                  <label for="name" style="font-size:16px;">WebSite's name</label>
+                  <input type="text" id="name" class="form-control" name="name" value="{INFO.name}">
+               </td>
+               <td>
+                  <label for="phone" style="font-size:16px;">Private contact</label>
+                  <input type="text" id="phone" class="form-control" name="phone" value="{INFO.phone}">
+               </td>
+               <td>
+                  <label for="phone_itnl" style="font-size:16px;">International contact</label>
+                  <input type="text" id="phone_itnl" class="form-control" name="phone_itnl" value="{INFO.phone_international}">
+               </td>
+               <td>
+                  <label for="mail" style="font-size:16px;">E-mail</label>
+                  <input type="text" id="mail" class="form-control" name="mail" value="{INFO.mail}">
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">
+                  <div class="row">
+                     <div class="col-md-6">
+                        <label for="icon_path" style="font-size:16px;">Icon</label>
+                        <!-- <input type="file" id="icon" class="form-control-file" name="icon" accept=".gif, .jpg, .png"> -->
+                        <input type="text" id="icon_path" class="form-control" name="icon_path" value="{INFO.icon_path}">
+                     </div>
+                     <div class="col-md-6 text-center">
+                        <img src="{INFO.icon_path}" class="img-fluid" width="90px" height="90px">
+                     </div>
+                  </div>
+               </td>
+               <td colspan="2">
+                  <div class="row">
+                     <div class="col-md-6">
+                        <label for="logo_path" style="font-size:16px;">Logo</label>
+                        <!-- <input type="file" id="icon" class="form-control-file" name="logo" accept=".gif, .jpg, .png"> -->
+                        <input type="text" id="logo_path" class="form-control" name="logo_path" value="{INFO.logo_path}">
+                     </div>
+                     <div class="col-md-6 text-center">
+                        <img src="{INFO.logo_path}" class="img-fluid" style="height:90px; width:auto;">
+                     </div>
+                  </div>
+               </td>
+            </tr>
+            <tr>
+               <td colspan="4">
+                  <div class="row">
+                     <div class="col-md-6">
+                        <label for="address" style="font-size:16px;">Geolocation API</label>
+                        <textarea id="address" name="address" class="form-control w-100" form="form-site-inf" rows="6">{INFO.address_api}</textarea>
+                     </div>
+                     <div class="col-md-6">
+                        <div id="map" class="w-100" style="height:200px;"></div>
+                        <script>
+                           function initMap()
+                           {
+                              var uluru = {lat: 20.6523683, lng: 106.05226160000001};
+                              var map = new google.maps.Map(document.getElementById('map'), {zoom: 10, center: uluru});
+                              var marker = new google.maps.Marker({position: uluru, map: map});
+                           }
+                        </script>
+                        <script async defer src="{INFO.address_api}"></script>
+                     </div>
+                  </div>
+               </td>
+            </tr>
+         </table>
+         <!-- END: INFO -->
+         <button type="submit" class="btn btn-success float-right" name="SiteInf">Save</button>
+      </form>
+   </div>
+</div>
+<!-- END: PREFERENCE -->

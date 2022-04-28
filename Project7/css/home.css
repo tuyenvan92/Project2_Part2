@@ -1,0 +1,128 @@
+.container {width: 80% !important;}
+.home_brand_item
+{
+	background: url(https://www.glassesusa.com/skin/frontend/default/optimax/react/src/img/c2807e0b6cb2532e75b3035748783b56.jpg) no-repeat;
+	opacity: .25;
+	display: block;
+	-webkit-transition: opacity .2s ease;
+	transition: opacity .2s ease;
+	font-size: 0;
+}
+.brand_item_1 {background-position: -50px 0; width: 52px; height: 45px;}
+.brand_item_2
+{background-position: -170px -4px; width: 76px; height: 40px;}
+.brand_item_3 {width: 120px; height: 18px; background: url(https://www.glassesusa.com/skin/frontend/default/optimax/react/src/img/2958cb4084b7422d8e7056b39962d8aa.png); margin-top:10px;}
+.brand_item_4 {background-position: -1153px -14px; width: 123px; height: 20px; margin-top:10px;}
+.brand_item_5 {background-position: -611px -9px; width: 80px; height: 32px;}
+.brand_item_6 {background-position: -730px -15px; width: 90px; height: 25px; margin-top: 5px;}
+
+a[class*='brand_item_'] {left:25%; position: relative;}
+a[class*='brand_item_']:hover {opacity: 1;}
+
+.title_header {border-bottom: 2px solid #eae9e5; text-align: center; margin-bottom: 40px; margin-top: 25px;}
+.title_header_text
+{
+	padding: 0 30px;
+	background-color: #fff;
+	margin-bottom: -12px;
+	vertical-align: middle;
+	display: inline-block;
+	color: #2d2d2d;
+	font-size: 22px; font-weight: 700;
+}
+.home_banner
+{
+	width: 80%; height: 200px;
+	position: relative;
+	background-color: #9db6b6;
+	padding: 20px;
+	cursor: pointer;
+	background-color: #ebebeb;
+}
+.home_banner_left {margin-left: 20%; margin-right: auto; padding-left: 40%;}
+.home_banner_right {margin-left: auto; margin-right: 20%; padding-left: 40%;}
+
+.home_popular
+{
+	width: 170px;
+	height: 45px;
+	text-align: center;
+	padding-top: 100px;
+	margin: 0 7px;
+	display: inline-block;
+}
+.home_popular_item_name {text-align: center; font-weight: 700; font-size: 12px; color: black;}
+.home_popular_item_name:hover {color:#3fabe6;}
+.home_popular_item_1 {background: url(https://www.glassesusa.com/skin/frontend/default/optimax/react/src/img/3bc7a0c3b71b95578569fc93666c796c.jpg) 0 0 no-repeat;}
+.home_popular_item_2 {background: url(https://www.glassesusa.com/skin/frontend/default/optimax/react/src/img/1cc416f85c321ff63bec3af2ea00c9f4.jpg) 0 0 no-repeat;}
+.home_popular_item_3 {background: url(https://www.glassesusa.com/skin/frontend/default/optimax/react/src/img/d1f08e9aa58faa04717fac265dd1aea5.jpg) 0 0 no-repeat;}
+.home_popular_item_4 {background: url(https://www.glassesusa.com//skin/frontend/default/optimax/react/src/img/6a540028dd0af524e1cab00be8d79303.jpg) 0 0 no-repeat;}
+.home_popular_item_5 {background: url(https://www.glassesusa.com//skin/frontend/default/optimax/react/src/img/a86731eee2aba591caced32ea991ec76.jpg) 0 0 no-repeat;}
+#home_popular ul li {display: inline;}
+
+a.home_frames_text {font-size: 18px; font-weight: 700; color: #2d2d2d; padding: 20px 0;}
+a.home_frames_text:hover {text-decoration: none;}
+
+.home_lenses_container
+{
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    margin-bottom: 10px;
+}
+.home_lenses
+{
+	position: relative;
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 400px;
+	flex: 1 1 400px;
+	background-color: #eae9e5;
+	padding: 20px 20px 38px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin-bottom: 30px;
+}
+.home_lenses {margin: 0 10px; border-radius: 10px;}
+#snap.home_lenses {margin: 0;}
+.home_lenses_item_1 {background: url(https://www.glassesusa.com/skin/frontend/default/optimax/react/src/img/bcf196326e7a89849eb2ba0df46fcf9c.jpg) 100% no-repeat #eae9e5; background-size: contain;}
+.lense_item_text {color: #000;}
+.lense_item_text:hover {color: #000; text-decoration: none;}
+.lense_item_text_title {display: block; color: #3fabe6; font-weight: 700; font-size: 28px; line-height: 1.1; margin-top: 25px; margin-bottom: 11px; text-align: left;}
+.home_lenses_item_1 .lense_item_text_content {font-family: Georgia; font-style: italic; color: #2d2d2d; font-size: 16px; margin-top: 5px; margin-bottom: 30px; text-align: left; max-width: 235px; min-height: 88px;}
+.lense_item_text_nav {color: #2d2d2d; font-weight: 700; margin-right: 35px; border-bottom: 2px solid #2d2d2d;}
+
+.home_lenses_item_2 .lense_item_text_content
+{
+	max-width: 100%;
+	font-family: Georgia;
+	font-style: italic;
+	color: #2d2d2d;
+	font-size: 16px;
+	margin-top: 5px;
+	margin-bottom: 30px;
+	text-align: left;
+	min-height: 88px;
+}
+.home_lenses_item_2 .item_img
+{
+	position: absolute;
+	bottom: 0;
+	left: 180px;
+	background: url(https://www.glassesusa.com/skin/frontend/default/optimax/react/src/img/c5814c4c49e3aa695381fe61602fc171.png) 0 0 no-repeat;
+	width: 302px;
+	height: 111px;
+}
+.home_lenses_item_2 .lense_item_text_nav {color: #2d2d2d; font-weight: 700; margin-right: 70%; border-bottom: 2px solid #2d2d2d; text-align: left;}
+.lense_item_text_nav:hover {color: #3fabe6; border-bottom: 2px solid #3fabe6;}
+
+#snap .item_img
+{
+	position: absolute;
+	left: 0; top: 5px;
+	background: url(https://www.glassesusa.com/skin/frontend/default/optimax/react/src/img/a294f275159e63f6ff7e7703bb8e0b96.png) 0 0 no-repeat;
+	width: 474px;
+	height: 202px;
+}

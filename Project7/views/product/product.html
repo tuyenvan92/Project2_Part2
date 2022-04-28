@@ -1,0 +1,148 @@
+<!-- BEGIN: PRODUCT -->
+<input type='text' value = '{product_id}' style = 'display: none;' id='product_id'/>
+<link rel='stylesheet' href='css/product.css'>
+	<script language="javascript" src='js/product.js'>
+        
+
+    </script>
+	<div class="container">
+    	<div class="advertise-productpage">
+    		<img src="images/product/product-reminder-designer-930x58.jpg" />
+        </div>
+
+        <div class="navsub-menu">
+        	<a href="{baseUrl}?m=0&a=0">Home</a> /&nbsp;
+            <a href="{baseUrl}?m=category&a=sunglasses">Sunglasses</a> /&nbsp; 
+            {product_name}
+        </div>
+        <div class="row">
+        	<div class="col-md-8">
+                
+            	<div class="row" id="slice-img">
+                	<div class="col-md-2">
+                    	<a href="#" onclick="pic(0)"><img class="small-img" src="{image1}" style="width:100px; height:50px"/></a>
+                        <a href="#" onclick="pic(1)"><img class="small-img" src="images/product/6711-f_2.jpg" style="width:100px; height:50px"/></a>
+                        <a href="#" onclick="pic(2)"><img class="small-img" src="images/product/46-6698_s.jpg" style="width:100px; height:50px"/></a>
+                    </div>
+                    <div class="col-md-10" id="detail-img">
+                    	<a class="alter-img" href="#" onclick="prev()"><i class="fas fa-angle-left" style="height:35px; width:20px"></i></a>
+                    	<img src="{image1}" style="width: 480px; height:240px" id="avatar"/>
+                        <a class="alter-img" href="#" onclick="next()"><i class="fas fa-angle-right" style="height:35px; width:20px"></i></a>
+                    </div>
+                     
+                </div>
+                <h3 id="cus-al-like">Customers also liked</h3>
+                <div class="row">
+                    <div class="col-md-3" id="cus-like-img">
+                    	<img src="images/product/6711-f_2.jpg" style="width: 140px; height:70px"/>
+                        <p>Ray-Ban 2132<br />
+                        $190</p>
+                    </div>
+                    <div class="col-md-3" id="cus-like-img">
+                    	<img src="images/product/6711-f_2.jpg" style="width: 140px; height:70px"/>
+                        <p>Ray-Ban 2132<br />
+                        $190</p>
+                    </div>
+                    <div class="col-md-3" id="cus-like-img">
+                    	<img src="images/product/6711-f_2.jpg" style="width: 140px; height:70px"/>
+                        <p>Ray-Ban 2132<br />
+                        $190</p>
+                    </div>
+                    <div class="col-md-3" id="cus-like-img">
+                    	<img src="images/product/6711-f_2.jpg" style="width: 140px; height:70px"/>
+                        <p>Ray-Ban 2132<br />
+                        $190</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+            	<h3>Ray-Ban 2132</h3>
+                <h4>$190</h4>
+                <div class="rate">
+                	<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <button class="btn" id="btnOrder">
+                	<a>Add to Cart</a>
+                </button>
+                <div class="introduction">
+                	<h5>Product Overview</h5>
+                    <p class="frame-measurements">Frame & Measurements</p>
+                    <p class="intro-brand">{info}</p>
+                    <p class="detail">Details</p>
+                    <div class="detail-info">
+                        <strong>Size:</strong> Large<br />
+                        <strong>Material:</strong> Plastic<br />
+                        <strong>Shape:</strong> Square, Classic Wayframe<br />
+                        <strong>Spring Hinger:</strong> No<br />
+                        <strong>Color:</strong> Tortoise / Green<br />
+                        <strong>Eligible for Progressive / Bifocal:</strong> Yes<br />
+                        <strong>Gender:</strong> Men, Women<br />
+                        <strong>Type:</strong> Full Frame<br />
+                    </div>
+                    <p class="measurements">Measurements &emsp;&emsp;&emsp;&emsp;&emsp; mm</p>
+                    <div class="detail-mea">
+                    	<div class="glasses-size">
+                    		<img src="images/product/bridgewidth.png" /><span><strong>Lens Width</strong> 18</span>
+                        </div>
+                        <div class="glasses-size">
+                    		<img src="images/product/lenswidth.png" /><span><strong>Bridge Width</strong> 55</span>
+                        </div>
+                        <div class="glasses-size">
+                        	<img src="images/product/templelength.png" /><span><strong>Temple Length</strong> 145</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+    <script type="text/javascript">
+            var i=0;
+        var array = new Array("images/product/46-6698_u.jpg"  ,"images/product/6711-f_2.jpg"  ,"images/product/46-6698_s.jpg");
+        
+        function pic(a)
+        {
+            i=a;
+            document.getElementById("avatar").src = array[i];
+        }
+        
+        function prev()
+        {
+            i--;
+            if(i==-1)
+            {
+                i=2;
+            }
+            document.getElementById("avatar").src = array[i];
+        }
+        
+        function next()
+        {
+            i++;
+            if(i==3)
+            {
+                i=0;
+            }
+            document.getElementById("avatar").src = array[i];
+        }
+    $(document).ready(function(){    
+        var btnAdd = document.getElementById('btnOrder');
+        btnAdd.onclick = function() {
+            var user_id = $('#user_id').val();
+            
+            if(user_id !== ''){
+            var product_id = $('#product_id').val();
+            $.post('ajax.php',{add_to_cart: 'true',user_id: user_id,product_id: product_id},function(data){
+                
+                    window.location.assign('?m=cart&a=cart&usId='+user_id);
+               
+                 $('#result').html(data);
+                });
+            } else {
+                alert('You must Sign in first! (click "My account" to signin/ signup)');
+            }
+        }
+
+    });
+    </script>
+
+<!-- END: PRODUCT -->

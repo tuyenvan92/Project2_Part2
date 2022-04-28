@@ -1,0 +1,40 @@
+.page-title{
+	margin:auto;width:930px;text-align:left;font-style: oblique;
+	padding-top: 20px;margin-bottom: 5px;
+	font: italic 13px Georgia; color: #7c7c7c;
+
+}
+
+.option-list{
+	background: lightblue;
+}
+.product-list{
+	padding-top:20px
+}
+.introduce{
+	font: normal 13px/20px Arial;
+    color: #4e4e5d;
+    letter-spacing: initial;
+    text-align: left;
+}
+.product-image{
+	border: none;
+}
+.product-image:hover {
+	opacity: 0.7;
+	
+}
+.card-title{
+	font-weight: bold;
+	font-size: 14px;
+}
+.price{
+	color: #bb0000;
+	font-size: 13px;
+	font-weight: bold;
+}
+.information {
+	color: #77abe6;
+	font-size: 13px;
+	font-weight: 500;
+}

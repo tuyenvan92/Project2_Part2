@@ -1,0 +1,206 @@
+<!-- BEGIN: GLASSES -->
+    <link rel='stylesheet' href='css/sunglasses.css'/>
+        <div class="container" id="main-section">
+            <div id="slice_image">
+                <div class="advertise">
+                    <img src="https://static.glassesusa.com/media/wysiwyg/hp18/86-spring25/sunnies/sunnies-cat-reminder-the-big-spring-clearance-930x278.jpg">
+                 </div>
+                 <div class="row" id="home_brand">
+                    <div class="col-md-2">
+                        <a href="#" class="home_brand_item brand_item_1">MUSE</a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="#" class="home_brand_item brand_item_2">Ray-Ban</a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="#" class="home_brand_item brand_item_3">PRADA</a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="#" class="home_brand_item brand_item_4">GUCCI</a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="#" class="home_brand_item brand_item_5">BAKLEY</a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="#" class="home_brand_item brand_item_6">DKNY</a>
+                    </div>
+                </div>   
+            </div>
+            <div class="row" id="content-page">
+                <div  class="col-md-3" id="column-sidebar-left" >
+                    <div class="column-left">
+                        <h4>Refine by:</h4>
+                        <form method="POST">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="collapse" data-target="#gender" id="btnColumn">
+                                Gender
+                            </button>
+                            <ul class="in collapse show" id="gender">
+                                <li><input type="checkbox" name="gender[]" value="0" class="li-column-left" data-filter = 'gender'  {Men_checked} onchange='handleChange(this);'/>Men</li>
+                                <li><input type="checkbox" name="gender[]" value="1" class="li-column-left" data-filter = 'gender'  {Women_checked} onchange='handleChange(this);'/>Women</li>
+                            </ul>
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="collapse" data-target="#frameShape" id="btnColumn">
+                                Frame Shape
+                            </button>
+                            <ul class="in collapse show" id="frameShape">
+                                <li><input type="checkbox" name="frameShape" value="Rectangle" class="li-column-left" id='Rectangle' data-filter = 'shape' filter-value='Rectangle' onchange="handleChange(this)" {Rectangle_checked}/><img src="images/sunglasses/43.png" class="img-column-left">Rectangle</li>
+                                
+                                <li><input type="checkbox" name="frameShape" value='Square' class="li-column-left" id='shape = Square' data-filter = 'shape' {Square_checked} onchange='handleChange(this);'/><img src="images/sunglasses/186.png" class="img-column-left">Square</li>
+                               
+                                <li><input type="checkbox" name="frameShape" value="Oversized"class="li-column-left" id='Oversized' data-filter = 'shape'  {Oversize_checked} onchange='handleChange(this);'/><img src="images/sunglasses/181.png" class="img-column-left">Oversized</li>
+                               
+                                <li><input type="checkbox" name="frameShape" value="Oval" class="li-column-left" id='Oval' data-filter = 'shape'  {Oval_checked} onchange='handleChange(this);'/><img src="images/sunglasses/184.png" class="img-column-left">Oval</li>
+                                
+                                <li><input type="checkbox" name="frameShape" value="Wrap" class="li-column-left" id='Wrap' data-filter = 'shape'  {Wrap_checked} onchange='handleChange(this);'/><img src="images/sunglasses/182.png" class="img-column-left">Wrap</li>
+                               
+                                <li><input type="checkbox" name="frameShape" value="Aviator" class="li-column-left" id='Aviator' data-filter = 'shape' {Aviator_checked} onchange='handleChange(this);'/><img src="images/sunglasses/41.png" class="img-column-left">Aviator</li>
+                               
+                                <li><input type="checkbox" name="frameShape" value="CatEye" class="li-column-left" id='Cat' data-filter = 'shape'  {CatEye_checked} onchange='handleChange(this);'/><img src="images/sunglasses/141.png" class="img-column-left">Cat Eye</li>
+                               
+                                <li><input type="checkbox" name="frameShape" value="Round" class="li-column-left" id='Round' data-filter = 'shape'  {Round_checked} onchange='handleChange(this);'/><img src="images/sunglasses/44.png" class="img-column-left">Round</li>
+                               
+                                <li><input type="checkbox" name="frameShape" value="Browline" class="li-column-left" id='Browline' data-filter = 'shape'  {Browline_checked} onchange='handleChange(this);'/><img src="images/sunglasses/185.png" class="img-column-left">Browline</li>
+                              
+                                <li><input type="checkbox" name="frameShape" value="Geometric" class="li-column-left" id='Geometric' data-filter = 'shape'  {Geometric_checked} onchange='handleChange(this);'/><img src="images/sunglasses/184.png" class="img-column-left">Geometric</li>
+                               
+                                <li><input type="checkbox" name="frameShape" value="Butterfly" class="li-column-left" id='Butterfly' data-filter = 'shape'  {Butterfly_checked} onchange='handleChange(this);'/><img src="images/sunglasses/183.png" class="img-column-left">Butterfly</li>
+                            </ul>
+                            
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="collapse" data-target="#size" id="btnColumn">
+                                Size
+                            </button>
+                            <ul class="in collapse show" id="size">
+                                <li><input type="checkbox" name="size[]" value="S" class="li-column-left" data-filter = 'size'  {Small_checked} onchange='handleChange(this);'/>Small</li>
+                                <li><input type="checkbox" name="size[]" value="M" class="li-column-left" data-filter = 'size'  {Medium_checked} onchange='handleChange(this);'/>Medium</li>
+                                <li><input type="checkbox" name="size[]" value="L" class="li-column-left" data-filter = 'size'  {Large_checked} onchange='handleChange(this);'/>Large</li>
+                                <li><input type="checkbox" name="size[]" value="XL" class="li-column-left" data-filter = 'size'  {XL_checked} onchange='handleChange(this);'/>XL</li>
+                            </ul>
+                            
+                        </form>
+                    </div>
+                </div>
+                    <div class="col-md-9" id="column-main">
+                        <h1 class="sunglasses-title">Sunglasses</h1>
+                        <div class="row">
+                            <div class="col-sm-3" id="big-selected">
+                                <select class="form-control" id="selected" data-filter = 'order'  onchange = "handleChange(this);">
+                                  <option value="id" data-filter = 'order' filter-value = 'id'>{select}</option>
+                                    <option value="Most-Popular" data-filter = 'order' filter-value = 'sale'  onclick='handleChange(this);'>Most Popular</option>
+                                    <option value="Name" data-filter = 'order' filter-value = 'name'  onselect='handleChange(this);'>Name</option>
+                                    <option value="Lowest-Price" data-filter = 'order' filter-value = 'price_asc'  onselect='handleChange(this);'>Lowest Price</option>
+                                    <option value="Highest-Price" data-filter = 'order' filter-value = 'price_desc'  onselect='handleChange(this);'>Highest Price</option>
+                                </select>          
+                            </div>
+                            <div class="col-sm-6">
+                            </div>
+                            <div class="col-sm-3" id="page-list">
+                                {pagers}
+                                
+                            </div>
+                        </div>
+                        <hr>
+                       
+                    <div class='row'>
+                    <!-- BEGIN: LIST_PD -->
+                        
+                            <div class="col-md-4" id="product" style='border-bottom: solid 1px #888;padding-bottom:10px'>
+                                
+                                <div class="product-intro">
+                                    <a href="{baseUrl}?m=product&a=product&name={LIST_PD.name}"><img class="product-img" src="{LIST_PD.image1}">
+                                    <div class="product-info">
+                                        <p class="product-name">{LIST_PD.name}</p>
+                                        <p class="product-price">${LIST_PD.price}</p>
+                                    </div>
+                                    </a>
+                                    <div class="dropdown-content">
+                                            <button class="btn btn-success" style='background: #fff;border: solid 1px #222;color:#222;border-radius: 1px'><a href='{baseUrl}?m=compare&a=compare&prd={LIST_PD.name}' style='color:#222'><i class="fas fa-search-plus"></i>&nbsp;Compare</a></button>
+                                        </div>
+                                </div>
+                            
+                         
+                    <!--END: LIST_PD -->   
+                    </div> 
+
+                    <script>
+                        function handleChange(data){
+                            
+                            var id = data.id;  
+                            var dataFilter = data.getAttribute('data-filter');
+                            
+                            var filterValue = data.value;
+                            var currentUrl = window.location.href;
+                             
+                            
+                            var filterIndex = currentUrl.indexOf(dataFilter);
+                        //---------- Nếu chưa tồn tại data-filter------------------------
+                            if(filterIndex ==-1) {
+                                currentUrl+='&'+dataFilter + '=' +filterValue;
+                                 
+                            } 
+                        //--------------Nếu tồn tại data filter -------------------------  
+                            else {
+
+                                 var valueIndex = currentUrl.indexOf(filterValue);
+                                 var endIndex = -1;
+                                        for(i = filterIndex; i<currentUrl.length; i++)
+                                            if(currentUrl[i] == '&'){
+                                                endIndex = i;
+                                                break;
+                                            }
+                             //--------------Nếu dataFilter = order -> xử lý riêng ---------------    
+                                 // if(dataFilter = 'order') {
+                                
+                                 //    } 
+                                   
+                                    
+                                //-----------Nếu đã tồn tại filter value này -> phải xóa nó đi----------------------
+                                if(dataFilter !=='order') {
+                                    if(valueIndex !=-1) {
+                                        
+                                        var ignoreString = filterValue + ',';
+                                        if(currentUrl.indexOf(ignoreString) == -1)
+                                            ignoreString = ',' + filterValue;
+                                        if(currentUrl.indexOf(ignoreString) ==-1)
+                                            ignoreString = '&'+dataFilter+'='+filterValue;
+                                        
+                                        currentUrl = currentUrl.replace(ignoreString,'');
+                                    }
+                                 //---------------- Nếu chưa có filter value này -> phải thêm nó vào ---------------
+                                    else {
+                                        
+                                        if(endIndex == -1) {
+                                            currentUrl = currentUrl + ',' + filterValue;
+                                        }
+                                        else {
+                                            var ignoreString = currentUrl.slice(filterIndex,endIndex);
+                                            var replaceString = ignoreString + ','+filterValue;
+                                            currentUrl = currentUrl.replace(ignoreString,replaceString);
+                                        }    
+                                    }
+
+
+                                }
+                                else {
+                                         
+                                        
+                                         if(endIndex == -1)
+                                            endIndex = currentUrl.length;
+                                        
+                                             
+                                        
+                                              var ignoreString = currentUrl.slice(filterIndex,endIndex);
+                                            
+                                              var replaceString = 'order='+filterValue;
+                                              currentUrl = currentUrl.replace(ignoreString,replaceString);
+                                        
+                                       
+                                }
+                            }
+                            
+
+                            window.location.replace(currentUrl);
+
+                        }
+
+                        
+                    </script>
+            <!-- END: GLASSES -->   

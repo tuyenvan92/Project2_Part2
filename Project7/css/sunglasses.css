@@ -1,0 +1,154 @@
+
+
+
+/*---------------------------------------------------------*/
+
+#images-slice
+{
+	height:auto;
+}
+#main-section{
+	width:1000px;	
+}
+.advertise{
+	text-align:center;
+}
+.home_brand_item
+{
+	background: url(https://www.glassesusa.com/skin/frontend/default/optimax/react/src/img/c2807e0b6cb2532e75b3035748783b56.jpg) no-repeat;
+	opacity: .25;
+	display: block;
+	-webkit-transition: opacity .2s ease;
+	transition: opacity .2s ease;
+	font-size: 0;
+}
+.brand_item_1 {background-position: -50px 0; width: 52px; height: 45px;}
+.brand_item_2{background-position: -170px -4px; width: 76px; height: 40px;}
+.brand_item_3 {width: 120px; height: 18px; background: url(https://www.glassesusa.com/skin/frontend/default/optimax/react/src/img/2958cb4084b7422d8e7056b39962d8aa.png); margin-top:10px;}
+.brand_item_4 {background-position: -1153px -14px; width: 123px; height: 20px; margin-top:10px;}
+.brand_item_5 {background-position: -611px -9px; width: 80px; height: 32px;}
+.brand_item_6 {background-position: -730px -15px; width: 90px; height: 25px; margin-top: 5px;}
+#content-page{
+	margin-top:30px;
+}
+#column-sidebar-left{
+	float:left;
+}
+.column-left{
+	padding-top:10px;
+	text-align: left;
+}
+.column-left h4{
+	font:italic 21px/1 Georgia;
+	color:#4d4d4d;
+	margin-top:20px;
+}
+.column-left ul li{
+	list-style-type:none;
+	font:normal 13px/12px Arial;
+}
+#btnColumn{
+	width:135px;
+	background-color:white;
+	border:white;
+	color:#323232;
+	font-weight:bold;
+	font-family:Helvetica;
+	font-size:14px;
+	display:block;
+}
+.li-column-left{
+	margin:10px;
+}
+.img-column-left{
+	margin-right:10px;
+}
+.sunglasses-title{
+	font-weight:1000;
+	font:normal 32px/36px "Arial Black",Arial
+}
+#page-list{
+	margin-top:20px;
+	text-align:right;
+}
+#page-list a{
+	color:#000;
+	margin-right:5px;
+}
+#page-list a:hover{
+	text-decoration:none;
+	color:#0CF;
+}
+#product{
+	display:inline-block;
+	margin-bottom:10px;
+}
+.favorite{
+	color:#0CF;
+	float:right;
+}
+.favorite:hover{
+	background:url(images/sunglasses/h_1.png);
+}
+.product-img{
+	width:220px;
+	height:110px;
+	display:inline-block;
+	margin-top:20px;
+}
+.product-intro a:hover{
+	display: block;	
+	text-decoration:none;
+}
+.product-intro a:hover .product-img{
+	opacity: 0.6;
+	transition: opacity 0.2s ease;
+}
+.product-intro a:hover .product-info{
+	opacity: 0.6;
+	transition: opacity 0.2s ease;
+}
+.product-name{
+	text-align:center;
+	margin-top:20px;
+	text-decoration:none;
+	color:#1c1c1c	
+}
+.dropdown-content
+{
+	opacity:0 !important;
+	text-align:center;
+}
+.product-intro:hover .dropdown-content
+{
+	opacity:1 !important;
+}
+.product-price{
+	color:#1c1c1c;
+	font:bold 15px/18px Arial;
+	text-align:center;
+}
+#big-selected{
+	padding-top:20px;
+}
+#selected{
+		
+}
+
+footer
+{
+	display: block;
+	background-color: rgb(51, 51, 51);
+	padding: 20px 0;
+	margin-top: 1%;
+}
+#footer-inner {}
+#footer-column-links {padding: 1.530612244% 0 0;}
+#footer-column-links h3
+{
+	font-size: 15px;
+	font-weight: 700;
+	color: rgb(204, 204, 204);
+	margin: 5px 0;
+	height: auto;
+}

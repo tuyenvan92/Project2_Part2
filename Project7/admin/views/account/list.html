@@ -1,0 +1,137 @@
+<!-- BEGIN: USER_LIST -->
+<div class="card mb-3">
+   <div class="card-header">
+      <form class="" method="post">
+         <select class="custom-select w-20" name="tbl_usr_filter">
+            <option value="0">Filter by</option>
+            <option value="1">Owner</option>
+            <option value="2">Administrator</option>
+            <option value="3">Non-super user</option>
+         </select>
+         <button type="submit" class="btn btn-primary" id="tbl_view_data">OK</button>
+      </form>
+   </div>
+   <div class="card-body">
+      <div class="table-responsive">
+         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+               <tr>
+                  <th>ID</th>
+                  <th>Mail</th>
+                  <th>User name</th>
+                  <th>Phone number</th>
+                  <th>Address</th>
+                  <th>Country</th>
+                  <th>City</th>
+                  <th style='width:200px;'>Type</th>
+                  <th></th>
+               </tr>
+            </thead>
+            <tfoot>
+               <tr>
+                  <th>ID</th>
+                  <th>Mail</th>
+                  <th>User name</th>
+                  <th>Phone number</th>
+                  <th>Address</th>
+                  <th>Country</th>
+                  <th>City</th>
+                  <th style='width:200px;'>Type</th>
+                  <th></th>
+               </tr>
+            </tfoot>
+            <tbody>
+               <!-- BEGIN: USER_INFO -->
+               <tr>
+                  <td>{USER_INFO.id}</td>
+                  <td>{USER_INFO.mail}</td>
+                  <td>{USER_INFO.full_name}</td>
+                  <td>{USER_INFO.phone_num}</td>
+                  <td>{USER_INFO.address}</td>
+                  <td>{USER_INFO.country}</td>
+                  <td>{USER_INFO.city}</td>
+                  <td>
+                     <form name="form_user_type" method="post">
+                        <script type="text/javascript">
+                           $(document).ready(function () {
+                              var user_type = $("select[name='tbl_user_type_{USER_INFO.id}']");
+                              user_type.val('{USER_INFO.user_type}');
+                           });
+                        </script>
+                        <select class="custom-select custom-select-sm wcustom-100" name="tbl_user_type_{USER_INFO.id}"
+                           onchange="this.form.submit()">
+                           <option value="1">Owner</option>
+                           <option value="2">Administrator</option>
+                           <option value="3">Non-super user</option>
+                        </select>
+                     </form>
+                  </td>
+                  <td style="width:97px;">
+                     <div class="btn-group">
+                        <a role="button" class="btn btn-secondary text-light" data-toggle="modal" data-target="#user_edit" onclick="usr_passID('{USER_INFO.id}');">Edit</a>
+                        <a role="button" class="btn btn-danger text-light" data-toggle="modal" data-target="#user_delete"
+                           onclick="usr_passID('{USER_INFO.id}');">Delete</a>
+                     </div>
+                  </td>
+               </tr>
+               <!-- END: USER_INFO -->
+            </tbody>
+         </table>
+      </div>
+   </div>
+   <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+   <div class="modal fade" id="user_edit" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h6 class="modal-title" id="eModalLabel">Edit account
+                  <span></span>
+               </h6>
+            </div>
+            <form method="post">
+               <div class="modal-body">
+                  <div class="form-row">
+                     <div class="col-md-4">
+                        <input type="text" class="form-control form-control-sm w-100 my-1" name="owner_edit_mail" placeholder="Mail"> </div>
+                     <div class="col-md-4">
+                        <input type="text" class="form-control form-control-sm w-100 my-1" name="owner_edit_name" placeholder="Name"> </div>
+                     <div class="col-md-4">
+                        <input type="text" class="form-control form-control-sm w-100 my-1" name="owner_edit_phone" placeholder="Phone"> </div>
+                  </div>
+                  <div class="form-row">
+                     <div class="col-md-4">
+                        <input type="text" class="form-control form-control-sm w-100 my-1" name="owner_edit_address" placeholder="Address"> </div>
+                     <div class="col-md-4">
+                        <input type="text" class="form-control form-control-sm w-100 my-1" name="owner_edit_city" placeholder="City"> </div>
+                     <div class="col-md-4">
+                        <input type="text" class="form-control form-control-sm w-100 my-1" name="owner_edit_country" placeholder="Country"> </div>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <button class="btn btn-sm btn-secondary" type="button" data-dismiss="modal">Discard</button>
+                  <button class="btn btn-sm btn-warning" type="submit" name="owner_edit_save">Save</button>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+   <div class="modal fade" id="user_delete" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header"></div>
+            <div class="modal-body">
+               <h6 class="modal-title" id="eModalLabel">Delete
+                  <span></span> ?</h6>
+            </div>
+            <div class="modal-footer">
+               <form class="" method="post">
+                  <button class="btn btn-sm btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                  <button class="btn btn-sm btn-danger" type="submit" name="owner_del_save">Save</button>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- END: USER_LIST -->

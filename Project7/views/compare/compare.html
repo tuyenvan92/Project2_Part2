@@ -1,0 +1,395 @@
+<!-- BEGIN: COMPARE -->
+<script type="text/javascript">
+  
+          $(document).ready(function(){    
+                        var btnAddPrd = document.getElementById('btnAddPrd');
+                        var btnAddCpe = document.getElementById('btnAddCpe');
+                       
+
+                        btnAddPrd.onclick = function() {
+                            var user_id = $('#user_id').val();
+                            
+                            if(user_id !== ''){
+                            var product_id = document.getElementById('prd_id').getAttribute('data-value');
+                            $.post('ajax.php',{add_to_cart: 'true',user_id: user_id,product_id: product_id},function(data){
+                                
+                                    window.location.assign('?m=cart&a=cart&usId='+user_id);
+                               
+                                 $('#result').html(data);
+                                });
+                            } else {
+                                alert('You must Sign in first! (click "My account" to signin/ signup)');
+                            }
+                        }
+
+                         btnAddCpe.onclick = function() {
+                            var user_id = $('#user_id').val();
+                            
+                            if(user_id !== ''){
+                            var product_id = document.getElementById('cpe_id').getAttribute('data-value');
+                            $.post('ajax.php',{add_to_cart: 'true',user_id: user_id,product_id: product_id},function(data){
+                                
+                                    window.location.assign('?m=cart&a=cart&usId='+user_id);
+                               
+                                 $('#result').html(data);
+                                });
+                            } else {
+                                alert('You must Sign in first! (click "My account" to signin/ signup)');
+                            }
+                        }
+
+                    });
+
+</script>
+	<link rel="stylesheet" href="css/compare.css" />
+	
+	<div class="container">
+        <table id="big-table" style="width:1010px">
+          <tr>
+          	<td></td>
+            <td>
+              <div class="compare-img">
+                <a href="#" class="compare-link">
+                     <img src="{prd_image}" style="width:200px; height:100px" />
+                      <p>{prd_name}</p>
+                </a>
+                <div class="inStock">
+                     <i class="fas fa-check"></i>
+                     In Stock
+                </div>
+                <i class="fas fa-star" style="color:#e6b800"></i><i class="fas fa-star" style="color:#e6b800"></i><i class="fas fa-star" style="color:#e6b800"></i><i class="fas fa-star" style="color:#e6b800"></i><i class="fas fa-star" style="color:#e6b800"></i>(3)
+                <div>
+                   <a class="dropdown-toggle" href="#" data-toggle="collapse" data-target="#read-more1">
+                         Read more
+                   </a>
+                   <p class="in collapse" id="read-more1">
+                       The Oakley Evzero Path is a rimless multi-sport frame crafted from cutting edge O-matter. Sporting Plutonite lenses and Unobtanium earsocks, it provides supreme comfort with an ultralightweight build and crystal clear vision
+                   </p>
+                </div>
+              </div>
+            </td>
+            
+            <td>
+              <div class="compare-img">
+                <a href="#" class="compare-link">
+                     <img src="{cpe_image}" style="width:200px; height:100px" />
+                      <p>{cpe_name}</p>
+                </a>
+                <div class="outStock">
+                     <i class="fas fa-times"></i>
+                     Out of Stock
+                </div>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>(0)
+                <div>
+                   <a class="dropdown-toggle" href="#" data-toggle="collapse" data-target="#read-more3">
+                         Read more
+                   </a>
+                   <p class="in collapse" id="read-more3">
+                       The Oakley Radar Pace is a truly revolutionary frame, featuring cutting edge eyewear technology, integrated with internal sensors and a real-time voice-activated coaching system, providing a unique program to help you make the most of your training sessions. Talk on your phone or listen to music through the excellent earbuds and Bluetooth connection. The Ultimate eyewear for getting in shape
+                   </p>
+                </div>
+               </div>
+             </td>
+          </tr>
+          <tr>
+            <th colspan="4"><h4>Product Information</h4></th>
+          </tr>
+          <tr style='display: none'>
+            <td class="left-table">ID</td>
+            <td class="right-table" id='prd_id' data-value='{prd_id}'>{prd_id}</td>
+            <td class="right-table" id='cpe_id' data-value='{cpe_id}'>{cpe_id}</td>
+          </tr>
+          <tr>
+            <td class="left-table">Price</td>
+            <td class="right-table">${prd_price}</td>
+            <td class="right-table">${cpe_price}</td>
+          </tr>
+
+          <tr>
+            <td class="left-table">Origin</td>
+            <td class="right-table">{prd_origin}</td>
+            <td class="right-table">{cpe_origin}</td>
+          </tr>
+          <tr>
+          	<td class="left-table">Material</td>
+            <td class="right-table">{prd_material}</td>
+            <td class="right-table">{cpe_material}</td>
+          </tr>
+          <tr>
+          	<td class="left-table">Frame Shape</td>
+            <td class="right-table">{prd_shape}</td>
+            <td class="right-table">{cpe_shape}</td>
+          </tr>
+          <tr>
+          	<td class="left-table">Size</td>
+            <td class="right-table">{prd_size}</td>
+            <td class="right-table">{cpe_size}</td>
+          </tr>
+          <tr>
+          	<td class="left-table">Warranty</td>
+            <td class="right-table">{prd_warranty}</td>
+            <td class="right-table">{cpe_warranty}</td>
+          </tr>
+          <tr>
+          	<td class="left-table">Gender</td>
+            <td class="right-table">{prd_gender}</td>
+            <td class="right-table">{cpe_gender}</td>
+          </tr>
+          <tr>
+          	<td class="left-table">Len Width</td>
+            <td class="right-table">{prd_lenWidth}</td>
+            <td class="right-table">{cpe_lenWidth}</td>
+          </tr>
+          <tr>
+          	<td class="left-table">Len Height</td>
+            <td class="right-table">{prd_lenHeight}</td>
+            <td class="right-table">{cpe_lenHeight}</td>
+          </tr>
+          <tr>
+          	<td class="left-table">Bridge Width</td>
+            <td class="right-table">{prd_bridgeWidth}</td>
+            <td class="right-table">{cpe_bridgeWidth}</td>
+          </tr>
+          <tr>
+          	<td class="left-table">Temple Length</td>
+            <td class="right-table">{prd_templeLength}</td>
+            <td class="right-table">{cpe_templeLength}</td>
+          </tr>
+          <tr id="row-cart">
+          	<td class="left-table"></td>
+            <td class="add-cart">
+            	<button class="btn" style='margin:8px 0px 0px 10px;
+                                          width:150px;
+                                          background-color:#ff6c00;color:#FFF' id="btnAddPrd">
+                	<i class="fas fa-shopping-cart" style="color:#FFF"></i>
+                	Add to Cart
+                </button>
+            </td>          
+            <td class="add-cart">
+            	<button class="btn" style='margin:8px 0px 0px 10px;
+                                          width:150px;
+                                          background-color:#ff6c00;color:#FFF' id="btnAddCpe">
+                	<i class="fas fa-shopping-cart" style="color:#FFF"></i>
+                	Add to Cart
+                </button>
+            </td>
+          </tr>
+        </table>
+        </div>
+    </div>
+<!-- END: COMPARE -->
+
+<!-- BEGIN: LISTPRODUCT -->
+ <link rel='stylesheet' href='css/sunglasses.css'/>
+        <div class="container" id="main-section">
+            <div id="slice_image">
+                <div class="advertise">
+                    <img src="images/sunglasses/holiday_rb_clubmaster_classic.png">
+                 </div>
+                 <div class="row" id="home_brand">
+                    <div class="col-md-2">
+                        <a href="#" class="home_brand_item brand_item_1">MUSE</a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="#" class="home_brand_item brand_item_2">Ray-Ban</a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="#" class="home_brand_item brand_item_3">PRADA</a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="#" class="home_brand_item brand_item_4">GUCCI</a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="#" class="home_brand_item brand_item_5">BAKLEY</a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="#" class="home_brand_item brand_item_6">DKNY</a>
+                    </div>
+                </div>   
+            </div>
+            <div class="row" id="content-page">
+                <div  class="col-md-3" id="column-sidebar-left" >
+                    <div class="column-left">
+                        <h4>Refine by:</h4>
+                        <form method="POST">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="collapse" data-target="#gender" id="btnColumn">
+                                Gender
+                            </button>
+                            <ul class="in collapse show" id="gender">
+                                <li><input type="checkbox" name="gender[]" value="0" class="li-column-left" data-filter = 'gender'  {Men_checked} onchange='handleChange(this);'/>Men</li>
+                                <li><input type="checkbox" name="gender[]" value="1" class="li-column-left" data-filter = 'gender'  {Women_checked} onchange='handleChange(this);'/>Women</li>
+                            </ul>
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="collapse" data-target="#frameShape" id="btnColumn">
+                                Frame Shape
+                            </button>
+                            <ul class="in collapse show" id="frameShape">
+                                <li><input type="checkbox" name="frameShape" value="Rectangle" class="li-column-left" id='Rectangle' data-filter = 'shape' filter-value='Rectangle' onchange="handleChange(this)" {Rectangle_checked}/><img src="images/sunglasses/43.png" class="img-column-left">Rectangle</li>
+                                
+                                <li><input type="checkbox" name="frameShape" value='Square' class="li-column-left" id='shape = Square' data-filter = 'shape' {Square_checked} onchange='handleChange(this);'/><img src="images/sunglasses/186.png" class="img-column-left">Square</li>
+                               
+                                <li><input type="checkbox" name="frameShape" value="Oversized"class="li-column-left" id='Oversized' data-filter = 'shape'  {Oversize_checked} onchange='handleChange(this);'/><img src="images/sunglasses/181.png" class="img-column-left">Oversized</li>
+                               
+                                <li><input type="checkbox" name="frameShape" value="Oval" class="li-column-left" id='Oval' data-filter = 'shape'  {Oval_checked} onchange='handleChange(this);'/><img src="images/sunglasses/184.png" class="img-column-left">Oval</li>
+                                
+                                <li><input type="checkbox" name="frameShape" value="Wrap" class="li-column-left" id='Wrap' data-filter = 'shape'  {Wrap_checked} onchange='handleChange(this);'/><img src="images/sunglasses/182.png" class="img-column-left">Wrap</li>
+                               
+                                <li><input type="checkbox" name="frameShape" value="Aviator" class="li-column-left" id='Aviator' data-filter = 'shape' {Aviator_checked} onchange='handleChange(this);'/><img src="images/sunglasses/41.png" class="img-column-left">Aviator</li>
+                               
+                                <li><input type="checkbox" name="frameShape" value="CatEye" class="li-column-left" id='Cat' data-filter = 'shape'  {CatEye_checked} onchange='handleChange(this);'/><img src="images/sunglasses/141.png" class="img-column-left">Cat Eye</li>
+                               
+                                <li><input type="checkbox" name="frameShape" value="Round" class="li-column-left" id='Round' data-filter = 'shape'  {Round_checked} onchange='handleChange(this);'/><img src="images/sunglasses/44.png" class="img-column-left">Round</li>
+                               
+                                <li><input type="checkbox" name="frameShape" value="Browline" class="li-column-left" id='Browline' data-filter = 'shape'  {Browline_checked} onchange='handleChange(this);'/><img src="images/sunglasses/185.png" class="img-column-left">Browline</li>
+                              
+                                <li><input type="checkbox" name="frameShape" value="Geometric" class="li-column-left" id='Geometric' data-filter = 'shape'  {Geometric_checked} onchange='handleChange(this);'/><img src="images/sunglasses/184.png" class="img-column-left">Geometric</li>
+                               
+                                <li><input type="checkbox" name="frameShape" value="Butterfly" class="li-column-left" id='Butterfly' data-filter = 'shape'  {Butterfly_checked} onchange='handleChange(this);'/><img src="images/sunglasses/183.png" class="img-column-left">Butterfly</li>
+                            </ul>
+                            
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="collapse" data-target="#size" id="btnColumn">
+                                Size
+                            </button>
+                            <ul class="in collapse show" id="size">
+                                <li><input type="checkbox" name="size[]" value="S" class="li-column-left" data-filter = 'size'  {Small_checked} onchange='handleChange(this);'/>Small</li>
+                                <li><input type="checkbox" name="size[]" value="M" class="li-column-left" data-filter = 'size'  {Medium_checked} onchange='handleChange(this);'/>Medium</li>
+                                <li><input type="checkbox" name="size[]" value="L" class="li-column-left" data-filter = 'size'  {Large_checked} onchange='handleChange(this);'/>Large</li>
+                                <li><input type="checkbox" name="size[]" value="XL" class="li-column-left" data-filter = 'size'  {XL_checked} onchange='handleChange(this);'/>XL</li>
+                            </ul>
+                            
+                        </form>
+                    </div>
+                </div>
+                    <div class="col-md-9" id="column-main">
+                        <h1 class="sunglasses-title">Select a Product</h1>
+                        <div class="row">
+                            <div class="col-sm-3" id="big-selected">
+                                <select class="form-control" id="selected" data-filter = 'order'  onchange = "handleChange(this);">
+                                  <option value="id" data-filter = 'order' filter-value = 'id'>{select}</option>
+                                    <option value="Most-Popular" data-filter = 'order' filter-value = 'sale'  onclick='handleChange(this);'>Most Popular</option>
+                                    <option value="Name" data-filter = 'order' filter-value = 'name'  onselect='handleChange(this);'>Name</option>
+                                    <option value="Lowest-Price" data-filter = 'order' filter-value = 'price_asc'  onselect='handleChange(this);'>Lowest Price</option>
+                                    <option value="Highest-Price" data-filter = 'order' filter-value = 'price_desc'  onselect='handleChange(this);'>Highest Price</option>
+                                </select>          
+                            </div>
+                            <div class="col-sm-6">
+                            </div>
+                            <div class="col-sm-3" id="page-list">
+                                {pagers}
+                                
+                            </div>
+                        </div>
+                        <hr>
+                       
+                    <div class='row'>
+                    <!-- BEGIN: LIST_PD -->
+                     <div class="col-md-4" id="product">
+                                
+                                <div class="product-intro" product-name='{LIST_PD.name}' onclick='getCompareLink(this)'>
+                                    <a><img class="product-img" src="{LIST_PD.image1}">
+                                    <div class="product-info">
+                                        <p class="product-name">{LIST_PD.name}</p>
+                                        <p class="product-price">${LIST_PD.price}</p>
+                                    </div>
+                                    
+                                    </a>
+                                          
+                                </div>                       
+                                                         
+                    <!--END: LIST_PD -->   
+                    </div> 
+
+                    <script>
+
+                      function getCompareLink(element){
+                        var name = element.getAttribute('product-name');
+                        var url = window.location.href + '&cpe=' + name;
+                        
+                        window.location.assign(url);
+                      }
+
+                       
+                       
+
+                        function handleChange(data){
+                            
+                            var id = data.id;  
+                            var dataFilter = data.getAttribute('data-filter');
+                            
+                            var filterValue = data.value;
+                            var currentUrl = window.location.href;
+                             
+                            
+                            var filterIndex = currentUrl.indexOf(dataFilter);
+                        //---------- Nếu chưa tồn tại data-filter------------------------
+                            if(filterIndex ==-1) {
+                                currentUrl+='&'+dataFilter + '=' +filterValue;
+                                 
+                            } 
+                        //--------------Nếu tồn tại data filter -------------------------  
+                            else {
+
+                                 var valueIndex = currentUrl.indexOf(filterValue);
+                                 var endIndex = -1;
+                                        for(i = filterIndex; i<currentUrl.length; i++)
+                                            if(currentUrl[i] == '&'){
+                                                endIndex = i;
+                                                break;
+                                            }
+                             //--------------Nếu dataFilter = order -> xử lý riêng ---------------    
+                                 // if(dataFilter = 'order') {
+                                
+                                 //    } 
+                                   
+                                    
+                                //-----------Nếu đã tồn tại filter value này -> phải xóa nó đi----------------------
+                                if(dataFilter !=='order') {
+                                    if(valueIndex !=-1) {
+                                        
+                                        var ignoreString = filterValue + ',';
+                                        if(currentUrl.indexOf(ignoreString) == -1)
+                                            ignoreString = ',' + filterValue;
+                                        if(currentUrl.indexOf(ignoreString) ==-1)
+                                            ignoreString = '&'+dataFilter+'='+filterValue;
+                                        
+                                        currentUrl = currentUrl.replace(ignoreString,'');
+                                    }
+                                 //---------------- Nếu chưa có filter value này -> phải thêm nó vào ---------------
+                                    else {
+                                        
+                                        if(endIndex == -1) {
+                                            currentUrl = currentUrl + ',' + filterValue;
+                                        }
+                                        else {
+                                            var ignoreString = currentUrl.slice(filterIndex,endIndex);
+                                            var replaceString = ignoreString + ','+filterValue;
+                                            currentUrl = currentUrl.replace(ignoreString,replaceString);
+                                        }    
+                                    }
+
+
+                                }
+                                else {
+                                         
+                                        
+                                         if(endIndex == -1)
+                                            endIndex = currentUrl.length;
+                                        
+                                             
+                                        
+                                              var ignoreString = currentUrl.slice(filterIndex,endIndex);
+                                            
+                                              var replaceString = 'order='+filterValue;
+                                              currentUrl = currentUrl.replace(ignoreString,replaceString);
+                                        
+                                       
+                                }
+                            }
+                            
+
+                            window.location.replace(currentUrl);
+
+                        }
+
+                        
+                    </script>
+  <!-- END: LISTPRODUCT -->                  

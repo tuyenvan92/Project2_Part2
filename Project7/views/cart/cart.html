@@ -1,0 +1,136 @@
+
+<!-- BEGIN: CART -->
+<link rel="stylesheet" href="css/cart.css">
+<div class='container' style='margin: auto;padding-top: 100px;padding-bottom: 100px;min-height:500px'>
+<div class='title'>
+	<span style='font-weight: bold;font-size: 40px;letter-spacing: -0.03em;'>Shopping Cart &nbsp;</span><span style='font-weight: bold;'>2 items </span>&nbsp;in Cart
+	<p class='link'><a href='{baseUrl}'>Continue shopping</a></p>
+</div>
+<div class='row' style='margin: auto'>
+	
+	<div class='col-md-9 buy-list'>
+		<!-- BEGIN: LIST -->
+		<div class='product row'>
+			<div class='col-md-4'>
+				<img style='width:100%' src='{LIST.image1}'/>
+			</div>
+			<div class='col-md-5 product-info'>
+				<h5>{LIST.name}</h5><span id = 'order_item_id{LIST.i}' data-value='{LIST.id}'>id: {LIST.id}</span>
+				<p><b>Quantity: </b><button class='btn btn-primary' style='width: 30px;height: 30px;line-height: 15px;background: #fff;color: #222' id='btn_minus{LIST.i}'>-</button><span id='qty{LIST.i}' style='padding-left: 10px;padding-right: 10px;color: red;font-size: 17px' data-value={LIST.quantity}></span><button class='btn btn-primary' style='width: 30px;height: 30px;line-height: 12px;text-align: center;background: #fff;color: #222' id='btn_add{LIST.i}'>+</button><br/>
+					<b>Price</b>: <span id='price{LIST.i}' data-value = '{LIST.price}'></span>
+				</p>
+				
+			</div>
+			<div class='col-md-3 total-price'>
+				<h5>Total</h5>
+				<p id='total-price{LIST.i}'></p>
+				<button style='background: #FFF' class='btn btn-light'>Remove</button>
+			</div>		
+		</div>
+		<!-- END: LIST -->
+
+	</div>
+	<div class='col-md-3 pay'>
+		<h5>Total</h5><br/>
+		<h4 style='color: #c80956'>{total_cost}</h4>
+		
+		<button type="button" class="btn btn-danger" style='display: block;margin: auto;width: 200px;margin-top: 80px;' data-toggle="modal" data-target="#myModal">
+		    Order
+		  </button>
+
+		  <!-- The Modal -->
+		  <div class="modal fade"  id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header" style='text-align: center'>
+          <h4 class="modal-title">Are you sure?</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Are you sure?
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+        	<button type='button' class = 'btn btn-primary'><a href='{baseUrl}?m=thankyou&a=thankyou&acceptorder=true'>Order</a></button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+	var i;
+	for(i=1; i<={LIST.i}; i++){
+
+		var qty = document.getElementById('qty'+i).getAttribute('data-value');
+		document.getElementById('qty'+i).innerHTML = qty;
+		var price = document.getElementById('price'+i).getAttribute('data-value');
+		
+		document.getElementById('total-price'+i).innerHTML = "$"+qty*price;
+
+		var minus = document.getElementById('btn_minus'+i);
+		var add = document.getElementById('btn_add'+i);
+		var orderItemId = document.getElementById('order_item_id'+i);
+
+		minus.onclick = function(){
+			var qty = document.getElementById('qty'+i).getAttribute('data-value');
+			if(qty > 1) {
+			qty = qty -1;
+			alert(qty);
+
+			
+			
+			var orderItemId = document.getElementById('order_item_id'+i).getAttribute('data-value');
+			//----------- POST to php ----------------
+			$(document).ready(function(){			
+				$.post('index.php',{qty: qty, orderItemId : orderItemId},function(data){
+					 $('#result').html(data);
+				});
+			});
+			}
+		}
+
+		add.onclick = function(){
+			var qty = document.getElementById('qty'+i).getAttribute('data-value');
+			alert(qty);
+			if(qty < 5) {
+			qty = Number(qty) +1;
+			
+			alert(orderItemId);
+			//----------- POST to php ----------------
+			$(document).ready(function(){								
+				alert(orderItemId);
+				$.post('ajax.php',{qty: qty, orderItemId : orderItemId},function(data){
+					$('#result').html(data);
+				});
+			});
+			}
+		}
+	}
+
+</script>
+
+<!-- END: CART -->
+
+
+<!-- BEGIN: EMPTYCART -->
+	
+	<div style='text-align: center;min-height: 500px;padding-top: 120px' class='container'>
+		<i style='font-size: 60px' class="fas fa-shopping-cart"></i>
+		<h1>Shopping cart is empty</h1>
+		<p>You have no item in your shopping cart</p>
+		<br/><br/>
+		<a class='btn btn-light' style='background: #FFF;width: 150px;height: 45px;border: solid 1px #222' href='{baseUrl}?m=category&a=men-eyeglasses'>Shop Men</a>&nbsp;&nbsp;
+		<a class='btn btn-light' style='background: #FFF;width: 150px;height: 45px;border: solid 1px #222' href='{baseUrl}?m=category&a=women-eyeglasses'>Shop Women</a>
+	</div>
+
+<!-- END: EMPTYCART -->
+
